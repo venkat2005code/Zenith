@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <!-- Background circle - Royal Indigo -->
+  <circle cx="16" cy="16" r="16" fill="#0F172A"/>
+  
+  <!-- Paper Plane Icon - Electric Blue -->
+  <path d="M26 6L6 14.5L14 17.5L17 25.5L26 6Z" fill="#3B82F6" stroke="#3B82F6" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="M14 17.5L26 6" stroke="#0F172A" stroke-width="1.2" stroke-linecap="round"/>
+  
+  <!-- Subtle speed lines - Electric Blue (low opacity) -->
+  <path d="M4 8L8 6.5M2 11L7 9" stroke="#3B82F6" stroke-width="1" stroke-linecap="round" opacity="0.4"/>
+</svg>

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Track Shipment – Zenith</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-brand">
+      <div class="nav-brand-icon"><i class="fas fa-paper-plane"></i></div>
+      Zenith
+    </a>
+    <ul class="nav-menu">
+      <li class="nav-item">
+        <a href="index.html" class="nav-link">Home <i class="fas fa-chevron-down chevron"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="index.html"  class="dropdown-item"><i class="fas fa-home"></i> Home 1</a></li>
+          <li><a href="index2.html" class="dropdown-item"><i class="fas fa-layer-group"></i> Home 2</a></li>
+        </ul>
+      </li>
+      <li class="nav-item"><a href="services.html"  class="nav-link">Services</a></li>
+      <li class="nav-item"><a href="tracking.html"  class="nav-link active">Tracking</a></li>
+      <li class="nav-item"><a href="about.html"     class="nav-link">About</a></li>
+      <li class="nav-item"><a href="contact.html"   class="nav-link">Contact</a></li>
+      <li class="nav-item">
+        <a href="#" class="nav-link">Dashboards <i class="fas fa-chevron-down chevron"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="dashboard-user.html"  class="dropdown-item"><i class="fas fa-user-circle"></i> User Dashboard</a></li>
+          <li><a href="dashboard-admin.html" class="dropdown-item"><i class="fas fa-shield-halved"></i> Admin Dashboard</a></li>
+        </ul>
+      </li>
+    </ul>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+        <i class="fas fa-moon"></i>
+      </button>
+      <button class="rtl-toggle"><i class="fas fa-globe"></i></button>
+      <a href="login.html"  class="btn btn-outline-primary btn-sm">Login</a>
+      <a href="signup.html" class="btn btn-primary btn-sm">Sign Up</a>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<div class="nav-mobile" id="mobileNav">
+  <a href="#" class="mobile-nav-link" data-dropdown="#mob-drop-home">Home <span class="chevron-m">▾</span></a>
+  <div id="mob-drop-home" class="mobile-dropdown">
+    <a href="index.html"  class="mobile-dropdown-item"><i class="fas fa-home"></i> Home 1</a>
+    <a href="index2.html" class="mobile-dropdown-item"><i class="fas fa-layer-group"></i> Home 2</a>
+  </div>
+  <a href="services.html"  class="mobile-nav-link">Services</a>
+  <a href="tracking.html"  class="mobile-nav-link active">Tracking</a>
+  <a href="about.html"     class="mobile-nav-link">About</a>
+  <a href="contact.html"   class="mobile-nav-link">Contact</a>
+  <a href="#" class="mobile-nav-link" data-dropdown="#mob-drop-dash">Dashboards <span class="chevron-m">▾</span></a>
+  <div id="mob-drop-dash" class="mobile-dropdown">
+    <a href="dashboard-user.html"  class="mobile-dropdown-item"><i class="fas fa-user-circle"></i> User Dashboard</a>
+    <a href="dashboard-admin.html" class="mobile-dropdown-item"><i class="fas fa-shield-halved"></i> Admin Dashboard</a>
+  </div>
+  <div style="display:flex;gap:12px;padding-top:24px;">
+    <a href="login.html"  class="btn btn-outline-primary" style="flex:1;text-align:center;">Login</a>
+    <a href="signup.html" class="btn btn-primary" style="flex:1;text-align:center;">Sign Up</a>
+  </div>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero" style="background-image: url('https://images.unsplash.com/photo-1566576721346-d4a3b4eaad5b?w=1400&auto=format');">
+  <div class="container page-hero-content">
+    <nav class="breadcrumb">
+      <a href="index.html">Home</a><span class="breadcrumb-sep"><i class="fas fa-chevron-right"></i></span>
+      <span class="breadcrumb-current">Tracking</span>
+    </nav>
+    <h1 class="fade-in">Track Your Shipment</h1>
+    <p class="fade-in delay-100">Real-time visibility at every checkpoint. Enter your tracking number below.</p>
+  </div>
+</section>
+
+<!-- TRACKING SECTION -->
+<section class="section tracking-section">
+  <div class="container">
+
+    <!-- Input card -->
+    <div class="tracking-input-card fade-in">
+      <div style="text-align:center;margin-bottom:28px;">
+        <div style="width:56px;height:56px;border-radius:var(--radius-md);background:rgba(249,115,22,.1);color:var(--clr-accent);display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin:0 auto 12px;">
+          <i class="fas fa-satellite-dish"></i>
+        </div>
+        <h3 style="margin-bottom:6px;">Real-Time Shipment Tracker</h3>
+        <p style="color:var(--clr-gray-600);font-size:.9375rem;">Enter your Zenith tracking number, AWB number, or reference ID</p>
+      </div>
+
+      <form id="tracking-form">
+        <div class="tracking-input-row">
+          <div class="form-group">
+            <label class="form-label">Tracking Number</label>
+            <div style="position:relative;">
+              <i class="fas fa-barcode" style="position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--clr-gray-400);font-size:1rem;"></i>
+              <input type="text" id="tracking-number" class="form-control" placeholder="e.g. SWS-2024-78432" style="padding-left:42px;" />
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg" style="border-radius:var(--radius-md);">
+            <i class="fas fa-search"></i> Track Now
+          </button>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
+          <span style="font-size:.8125rem;color:var(--clr-gray-400);">Try a demo:</span>
+          <button type="button" onclick="document.getElementById('tracking-number').value='SWS-2024-78432';document.getElementById('tracking-form').dispatchEvent(new Event('submit'));"
+            style="padding:5px 14px;border-radius:var(--radius-pill);background:rgba(249,115,22,.1);color:var(--clr-accent);font-size:.8125rem;font-weight:600;border:1px solid rgba(249,115,22,.2);cursor:pointer;">
+            SWS-2024-78432
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Tracking result -->
+    <div class="tracking-result" id="tracking-result">
+      <!-- Result header -->
+      <div class="tracking-result-header">
+        <div>
+          <h3 id="tr-id">SWS-2024-78432</h3>
+          <div class="tracking-tracking-ref">Tracking Reference</div>
+        </div>
+        <div class="tracking-status-pill">
+          <div class="status-dot"></div>
+          <span id="tr-status">In Transit</span>
+        </div>
+      </div>
+
+      <!-- Body -->
+      <div class="tracking-body">
+        <!-- Progress bar -->
+        <div class="delivery-progress">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+            <span style="font-size:.875rem;font-weight:600;color:var(--clr-primary);">Delivery Progress</span>
+            <span style="font-size:.875rem;font-weight:700;color:var(--clr-accent);" id="progress-pct">65%</span>
+          </div>
+          <div class="progress-track">
+            <div class="progress-fill" id="prog-fill" style="width:0%;"></div>
+          </div>
+          <div class="progress-steps">
+            <span class="progress-step done">Order<br>Created</span>
+            <span class="progress-step done">Picked<br>Up</span>
+            <span class="progress-step done">In<br>Transit</span>
+            <span class="progress-step active">Sorting<br>Hub</span>
+            <span class="progress-step">Out for<br>Delivery</span>
+            <span class="progress-step">Delivered</span>
+          </div>
+        </div>
+
+        <!-- Meta data -->
+        <div class="tracking-meta">
+          <div class="tracking-meta-item">
+            <label>From</label>
+            <span id="tr-from">New York, USA</span>
+          </div>
+          <div class="tracking-meta-item">
+            <label>To</label>
+            <span id="tr-to">Los Angeles, USA</span>
+          </div>
+          <div class="tracking-meta-item">
+            <label>Est. Delivery</label>
+            <span id="tr-eta">Mar 9, 2026</span>
+          </div>
+          <div class="tracking-meta-item">
+            <label>Service</label>
+            <span id="tr-service">Express Delivery</span>
+          </div>
+          <div class="tracking-meta-item">
+            <label>Weight</label>
+            <span id="tr-weight">2.4 kg</span>
+          </div>
+          <div class="tracking-meta-item">
+            <label>Status</label>
+            <span id="tr-status2" style="color:var(--clr-accent);font-weight:700;">In Transit</span>
+          </div>
+        </div>
+
+        <!-- Timeline -->
+        <h5 style="margin-bottom:20px;color:var(--clr-primary);">Shipment Journey</h5>
+        <div class="timeline" id="tr-timeline">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-3" id="tracking-tips" style="margin-top:48px; width: 100%;">
+      <div style="background:var(--clr-bg-card);border-radius:var(--radius-lg);padding:24px;box-shadow:var(--shadow-xs);border:1px solid var(--clr-gray-200); width: 100%;" class="fade-in delay-100">
+        <div style="font-size:1.5rem;margin-bottom:12px;"><i class="fas fa-question-circle" style="color:var(--clr-accent);"></i></div>
+        <h5 style="margin-bottom:8px;">Can't find your tracking number?</h5>
+        <p style="font-size:.875rem;color:var(--clr-gray-600);">Check your order confirmation email or the receipt provided by your sender.</p>
+      </div>
+      <div style="background:var(--clr-bg-card);border-radius:var(--radius-lg);padding:24px;box-shadow:var(--shadow-xs);border:1px solid var(--clr-gray-200); width: 100%;" class="fade-in delay-200">
+        <div style="font-size:1.5rem;margin-bottom:12px;"><i class="fas fa-sync-alt" style="color:var(--clr-teal);"></i></div>
+        <h5 style="margin-bottom:8px;">No updates showing?</h5>
+        <p style="font-size:.875rem;color:var(--clr-gray-600);">New shipments may take up to 2 hours to appear in our system after label creation.</p>
+      </div>
+      <div style="background:var(--clr-bg-card);border-radius:var(--radius-lg);padding:24px;box-shadow:var(--shadow-xs);border:1px solid var(--clr-gray-200); width: 100%;" class="fade-in delay-300">
+        <div style="font-size:1.5rem;margin-bottom:12px;"><i class="fas fa-headset" style="color:var(--clr-primary);"></i></div>
+        <h5 style="margin-bottom:8px;">Need help?</h5>
+        <p style="font-size:.875rem;color:var(--clr-gray-600);">Our support team is available 24/7 at <a href="mailto:support@zenith.com" style="color:var(--clr-accent);">support@zenith.com</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section-sm cta-section">
+  <div class="container">
+    <div class="cta-inner" style="text-align:center;">
+      <span class="section-label" style="color:rgba(255,255,255,.75);display:inline-flex;">Ship Your Own Package</span>
+      <h2 style="color:var(--clr-white);margin-bottom:12px;margin-top:4px;">Ready to Send a Package?</h2>
+      <p style="color:rgba(255,255,255,.8);margin-bottom:28px;">Create a shipment in under 2 minutes. No subscription required.</p>
+      <div class="cta-btns">
+        <a href="signup.html" class="btn btn-white btn-lg">Book a Delivery</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <!-- Brand -->
+      <div>
+        <a href="index.html" class="nav-brand footer-brand">
+          <div class="nav-brand-icon"><i class="fas fa-paper-plane"></i></div>
+          Zenith
+        </a>
+        <p class="footer-desc">Your trusted partner for fast, reliable courier and delivery services across the globe. Delivering smiles since 2010.</p>
+        <div class="footer-socials">
+          <a href="#" class="social-btn" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-btn" aria-label="Twitter/X"><i class="fab fa-x-twitter"></i></a>
+          <a href="#" class="social-btn" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <!-- Services -->
+      <div>
+        <h6 class="footer-col-title">Services</h6>
+        <ul class="footer-links">
+          <li><a href="services.html" class="footer-link"><i class="fas fa-chevron-right"></i> Express Delivery</a></li>
+          <li><a href="services.html" class="footer-link"><i class="fas fa-chevron-right"></i> International Shipping</a></li>
+          <li><a href="services.html" class="footer-link"><i class="fas fa-chevron-right"></i> Cold Chain Logistics</a></li>
+          <li><a href="services.html" class="footer-link"><i class="fas fa-chevron-right"></i> Freight Solutions</a></li>
+          <li><a href="services.html" class="footer-link"><i class="fas fa-chevron-right"></i> Warehousing</a></li>
+        </ul>
+      </div>
+      <!-- Company -->
+      <div>
+        <h6 class="footer-col-title">Company</h6>
+        <ul class="footer-links">
+          <li><a href="about.html"   class="footer-link"><i class="fas fa-chevron-right"></i> About Us</a></li>
+          <li><a href="#"            class="footer-link"><i class="fas fa-chevron-right"></i> Careers</a></li>
+          <li><a href="#"            class="footer-link"><i class="fas fa-chevron-right"></i> Press Room</a></li>
+          <li><a href="#"            class="footer-link"><i class="fas fa-chevron-right"></i> Partnerships</a></li>
+          <li><a href="contact.html" class="footer-link"><i class="fas fa-chevron-right"></i> Contact</a></li>
+        </ul>
+      </div>
+      <!-- Contact -->
+      <div>
+        <h6 class="footer-col-title">Contact Us</h6>
+        <ul class="footer-links">
+          <li class="footer-link" style="cursor:default;"><i class="fas fa-map-marker-alt" style="color:var(--clr-accent);width:16px;"></i> 420 Logistics Blvd, New York, NY</li>
+          <li><a href="tel:+18005557890" class="footer-link"><i class="fas fa-phone" style="color:var(--clr-accent);width:16px;"></i> +1 800 555 7890</a></li>
+          <li><a href="mailto:support@zenith.com" class="footer-link"><i class="fas fa-envelope" style="color:var(--clr-accent);width:16px;"></i> support@zenith.com</a></li>
+        </ul>
+        <!-- Newsletter -->
+        <div style="margin-top:20px;">
+          <div style="font-size:.8rem;color:rgba(255,255,255,.4);margin-bottom:8px;font-weight:600;text-transform:uppercase;letter-spacing:.07em;">Newsletter</div>
+          <div style="display:flex;gap:0;">
+            <input type="email" placeholder="Your email" style="flex:1;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:var(--radius-md) 0 0 var(--radius-md);padding:10px 14px;color:var(--clr-white);font-size:.875rem;outline:none;" />
+            <button style="background:var(--clr-accent);border:none;border-radius:0 var(--radius-md) var(--radius-md) 0;padding:10px 16px;color:var(--clr-white);cursor:pointer;"><i class="fas fa-paper-plane"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2026 Zenith. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="#" class="footer-bottom-link">Privacy Policy</a>
+        <a href="#" class="footer-bottom-link">Terms of Service</a>
+        <a href="#" class="footer-bottom-link">Cookie Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

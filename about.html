@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us – Zenith Courier</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-brand">
+      <div class="nav-brand-icon"><i class="fas fa-paper-plane"></i></div>
+      Zenith
+    </a>
+    <ul class="nav-menu">
+      <li class="nav-item">
+        <a href="index.html" class="nav-link">Home <i class="fas fa-chevron-down chevron"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="index.html"  class="dropdown-item"><i class="fas fa-home"></i> Home 1</a></li>
+          <li><a href="index2.html" class="dropdown-item"><i class="fas fa-layer-group"></i> Home 2</a></li>
+        </ul>
+      </li>
+      <li class="nav-item"><a href="services.html"  class="nav-link">Services</a></li>
+      <li class="nav-item"><a href="tracking.html"  class="nav-link">Tracking</a></li>
+      <li class="nav-item"><a href="about.html"     class="nav-link active">About</a></li>
+      <li class="nav-item"><a href="contact.html"   class="nav-link">Contact</a></li>
+      <li class="nav-item">
+        <a href="#" class="nav-link">Dashboards <i class="fas fa-chevron-down chevron"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="dashboard-user.html"  class="dropdown-item"><i class="fas fa-user-circle"></i> User Dashboard</a></li>
+          <li><a href="dashboard-admin.html" class="dropdown-item"><i class="fas fa-shield-halved"></i> Admin Dashboard</a></li>
+        </ul>
+      </li>
+    </ul>
+    <div class="nav-actions" id="main-nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+        <i class="fas fa-moon"></i>
+      </button>
+      <button class="rtl-toggle" id="main-rtl-toggle"><i class="fas fa-globe"></i></button>
+      <a href="login.html"  class="btn btn-outline-primary btn-sm">Login</a>
+      <a href="signup.html" class="btn btn-primary btn-sm">Sign Up</a>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<div class="nav-mobile" id="mobileNav">
+  <a href="#" class="mobile-nav-link" data-dropdown="#mob-drop-home">Home <span class="chevron-m">▾</span></a>
+  <div id="mob-drop-home" class="mobile-dropdown">
+    <a href="index.html"  class="mobile-dropdown-item"><i class="fas fa-home"></i> Home 1</a>
+    <a href="index2.html" class="mobile-dropdown-item"><i class="fas fa-layer-group"></i> Home 2</a>
+  </div>
+  <a href="services.html"  class="mobile-nav-link">Services</a>
+  <a href="tracking.html"  class="mobile-nav-link">Tracking</a>
+  <a href="about.html"     class="mobile-nav-link active">About</a>
+  <a href="contact.html"   class="mobile-nav-link">Contact</a>
+  <a href="#" class="mobile-nav-link" data-dropdown="#mob-drop-dash">Dashboards <span class="chevron-m">▾</span></a>
+  <div id="mob-drop-dash" class="mobile-dropdown">
+    <a href="dashboard-user.html"  class="mobile-dropdown-item"><i class="fas fa-user-circle"></i> User Dashboard</a>
+    <a href="dashboard-admin.html" class="mobile-dropdown-item"><i class="fas fa-shield-halved"></i> Admin Dashboard</a>
+  </div>
+  <div style="display:flex;gap:12px;padding-top:24px;">
+    <a href="login.html"  class="btn btn-outline-primary" style="flex:1;text-align:center;">Login</a>
+    <a href="signup.html" class="btn btn-primary" style="flex:1;text-align:center;">Sign Up</a>
+  </div>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero" style="background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1400&auto=format');">
+  <div class="container page-hero-content page-hero-2col">
+    <div>
+      <nav class="breadcrumb">
+        <a href="index.html">Home</a><span class="breadcrumb-sep"><i class="fas fa-chevron-right"></i></span>
+        <span class="breadcrumb-current">About</span>
+      </nav>
+      <h1 class="fade-in about-us-single-line">About Zenith</h1>
+      <p class="fade-in delay-100">We've been moving the world's packages with precision, care, and technology since 2010. Our mission: make logistics effortless for everyone.</p>
+      <div class="fade-in delay-200 about-hero-stats" id="about-stats-container">
+        <div><div style="font-family:var(--font-heading);font-size:1.75rem;font-weight:900;color:var(--clr-white);line-height:1.2;">16+</div><div style="font-size:.875rem;color:rgba(255,255,255,.8);">Years of Excellence</div></div>
+        <div><div style="font-family:var(--font-heading);font-size:1.75rem;font-weight:900;color:var(--clr-white);line-height:1.2;">200+</div><div style="font-size:.875rem;color:rgba(255,255,255,.8);">Countries Served</div></div>
+        <div><div style="font-family:var(--font-heading);font-size:1.75rem;font-weight:900;color:var(--clr-white);line-height:1.2;">4,800+</div><div style="font-size:.875rem;color:rgba(255,255,255,.8);">Team Members</div></div>
+      </div>
+    </div>
+    <div class="fade-in-right delay-200" style="position:relative;">
+      <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=700&auto=format&q=80" alt="Zenith team" style="border-radius:var(--radius-xl);height:320px;width:100%;object-fit:cover;box-shadow:var(--shadow-xl);" />
+    </div>
+  </div>
+</section>
+
+<!-- COMPANY STORY -->
+<section class="section company-story">
+  <div class="container">
+    <div class="story-grid">
+      <div class="story-img fade-in-left">
+        <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=700&auto=format&q=80" alt="Zenith warehouse" />
+        <div class="story-badge">
+          <div class="n">2010</div>
+          <div class="l">Founded</div>
+        </div>
+      </div>
+      <div class="fade-in-right">
+        <span class="section-label">Our Story</span>
+        <h2 class="section-title">From a Single Van to a Global Network</h2>
+        <p style="color:var(--clr-gray-600);line-height:1.8;margin-bottom:20px;">Zenith was founded in 2010 by two logistics veterans who believed courier delivery could be smarter, more transparent, and more human. We started with one van in New York City and a single promise: your package, on time, every time.</p>
+        <p style="color:var(--clr-gray-600);line-height:1.8;margin-bottom:32px;">Today, Zenith operates across 200+ countries, maintains 85+ distribution hubs, and has delivered over 12 million packages for businesses ranging from solo sellers to Fortune 500 enterprises. Technology drives every decision — from AI route optimisation to our real-time tracking platform.</p>
+        <div style="display:flex;gap:20px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:8px;padding:10px 16px;background:var(--clr-bg-alt);border-radius:var(--radius-md);border:1px solid var(--clr-border);">
+            <i class="fas fa-medal" style="color:var(--clr-accent);"></i>
+            <span style="font-size:.875rem;font-weight:600;">ISO 9001 Certified</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;padding:10px 16px;background:var(--clr-bg-alt);border-radius:var(--radius-md);border:1px solid var(--clr-border);">
+            <i class="fas fa-leaf" style="color:var(--clr-success);"></i>
+            <span style="font-size:.875rem;font-weight:600;">Carbon-Neutral by 2030</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;padding:10px 16px;background:var(--clr-bg-alt);border-radius:var(--radius-md);border:1px solid var(--clr-border);">
+            <i class="fas fa-award" style="color:var(--clr-teal);"></i>
+            <span style="font-size:.875rem;font-weight:600;">Best Courier 2025</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION & VISION -->
+<section class="section bg-light">
+  <div class="container">
+    <div class="section-header-center fade-in" style="margin-bottom:48px;">
+      <span class="section-label">Our Purpose</span>
+      <h2 class="section-title">Mission & Vision</h2>
+    </div>
+    <div class="mission-vision-grid">
+      <div class="mv-card mv-card-primary fade-in delay-100">
+        <div class="mv-icon"><i class="fas fa-bullseye"></i></div>
+        <h3>Our Mission</h3>
+        <p>To make logistics seamless, transparent, and accessible for every business and individual — by combining best-in-class technology with a relentless commitment to on-time delivery and customer satisfaction.</p>
+      </div>
+      <div class="mv-card mv-card-accent fade-in delay-200">
+        <div class="mv-icon"><i class="fas fa-eye"></i></div>
+        <h3>Our Vision</h3>
+        <p>To be the world's most trusted courier brand — a platform where anyone can ship anything, anywhere, with complete confidence and real-time visibility throughout the entire journey.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOGISTICS EXPERTISE -->
+<section class="section">
+  <div class="container">
+    <div class="expertise-grid">
+      <div class="fade-in">
+        <span class="section-label">Expertise</span>
+        <h2 class="section-title">Built by Logistics Experts</h2>
+        <p class="section-desc" style="line-height:1.6;margin-bottom:24px;">Our team of specialists works every day to optimise every aspect of the delivery experience.</p>
+        <div style="display:flex;flex-direction:column;gap:12px;">
+          <div style="display:flex;gap:12px;align-items:center;">
+            <div style="width:4px;height:32px;background:var(--clr-accent);border-radius:2px;flex-shrink:0;"></div>
+            <div style="font-size:0.9rem;"><strong>AI Routes</strong> — reduces delivery time by up to 40%.</div>
+          </div>
+          <div style="display:flex;gap:12px;align-items:center;">
+            <div style="width:4px;height:32px;background:var(--clr-teal);border-radius:2px;flex-shrink:0;"></div>
+            <div style="font-size:0.9rem;"><strong>Smart Sorting</strong> — 99.2% accurate automated parcel routing.</div>
+          </div>
+        </div>
+      </div>
+      <div class="fade-in-right">
+        <div class="expertise-gallery">
+          <div style="border-radius:var(--radius-lg);overflow:hidden;height:180px;">
+            <img src="https://images.unsplash.com/photo-1553413077-190dd305871c?w=500&auto=format&q=80" alt="Warehouse operations" style="width:100%;height:100%;object-fit:cover;" />
+          </div>
+          <div style="border-radius:var(--radius-lg);overflow:hidden;height:180px;" class="exp-img-2">
+            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=500&auto=format&q=80" alt="Tech control room" style="width:100%;height:100%;object-fit:cover;" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPANY VALUES -->
+<section class="section bg-light">
+  <div class="container">
+    <div class="section-header-center fade-in" style="margin-bottom:48px;">
+      <span class="section-label">What Drives Us</span>
+      <h2 class="section-title">Our Core Values</h2>
+    </div>
+    <div class="values-grid">
+      <div class="value-card fade-in delay-100">
+        <div class="vi">🎯</div>
+        <h5>Reliability First</h5>
+        <p>We keep our promises. 98.2% on-time delivery rates are not an accident — they're the result of rigorous process design and accountability.</p>
+      </div>
+      <div class="value-card fade-in delay-200">
+        <div class="vi">🔍</div>
+        <h5>Full Transparency</h5>
+        <p>No hidden fees. No mystery delays. Real-time tracking and proactive communication at every single milestone of your shipment.</p>
+      </div>
+      <div class="value-card fade-in delay-300">
+        <div class="vi">💡</div>
+        <h5>Innovation Driven</h5>
+        <p>We invest heavily in R&D — AI routing, predictive analytics, and electric fleets — to stay ahead of the logistics curve.</p>
+      </div>
+      <div class="value-card fade-in delay-100">
+        <div class="vi">🌱</div>
+        <h5>Sustainability</h5>
+        <p>Committed to carbon-neutral operations by 2030. Our EV fleet expansion and eco-packaging programme lead the industry.</p>
+      </div>
+      <div class="value-card fade-in delay-200">
+        <div class="vi">🤝</div>
+        <h5>Customer Obsession</h5>
+        <p>Every decision starts with the question: "Does this make our customer's life easier?" Our 4.9-star rating reflects this commitment.</p>
+      </div>
+      <div class="value-card fade-in delay-300">
+        <div class="vi">🌍</div>
+        <h5>Global Mindset</h5>
+        <p>Local expertise combined with global reach. We understand the nuances of every market we operate in across 200+ countries.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section-sm cta-section">
+  <div class="container">
+    <div class="cta-inner">
+      <div>
+        <span class="section-label" style="color:rgba(255,255,255,.75);">Join Zenith</span>
+        <h2 style="color:var(--clr-white);margin-bottom:12px;">Be Part of Our Journey</h2>
+        <p style="color:rgba(255,255,255,.8);">Ship with us, partner with us, or build a career with us. We're growing fast.</p>
+      </div>
+      <div class="cta-btns">
+        <a href="signup.html"  class="btn btn-white btn-lg">Get Started</a>
+        <a href="contact.html" class="btn btn-outline btn-lg">Partner With Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <!-- Brand -->
+      <div>
+        <a href="index.html" class="nav-brand footer-brand">
+          <div class="nav-brand-icon"><i class="fas fa-paper-plane"></i></div>
+          Zenith
+        </a>
+        <p class="footer-desc">Your trusted partner for fast, reliable courier and delivery services across the globe. Delivering smiles since 2010.</p>
+        <div class="footer-socials">
+          <a href="#" class="social-btn" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-btn" aria-label="Twitter/X"><i class="fab fa-x-twitter"></i></a>
+          <a href="#" class="social-btn" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <!-- Services -->
+      <div>
+        <h6 class="footer-col-title">Services</h6>
+        <ul class="footer-links">
+          <li><a href="services.html" class="footer-link"><i class="fas fa-chevron-right"></i> Express Delivery</a></li>
+          <li><a href="services.html" class="footer-link"><i class="fas fa-chevron-right"></i> International Shipping</a></li>
+          <li><a href="services.html" class="footer-link"><i class="fas fa-chevron-right"></i> Cold Chain Logistics</a></li>
+          <li><a href="services.html" class="footer-link"><i class="fas fa-chevron-right"></i> Freight Solutions</a></li>
+          <li><a href="services.html" class="footer-link"><i class="fas fa-chevron-right"></i> Warehousing</a></li>
+        </ul>
+      </div>
+      <!-- Company -->
+      <div>
+        <h6 class="footer-col-title">Company</h6>
+        <ul class="footer-links">
+          <li><a href="about.html"   class="footer-link"><i class="fas fa-chevron-right"></i> About Us</a></li>
+          <li><a href="#"            class="footer-link"><i class="fas fa-chevron-right"></i> Careers</a></li>
+          <li><a href="#"            class="footer-link"><i class="fas fa-chevron-right"></i> Press Room</a></li>
+          <li><a href="#"            class="footer-link"><i class="fas fa-chevron-right"></i> Partnerships</a></li>
+          <li><a href="contact.html" class="footer-link"><i class="fas fa-chevron-right"></i> Contact</a></li>
+        </ul>
+      </div>
+      <!-- Contact -->
+      <div>
+        <h6 class="footer-col-title">Contact Us</h6>
+        <ul class="footer-links">
+          <li class="footer-link" style="cursor:default;"><i class="fas fa-map-marker-alt" style="color:var(--clr-accent);width:16px;"></i> 420 Logistics Blvd, New York, NY</li>
+          <li><a href="tel:+18005557890" class="footer-link"><i class="fas fa-phone" style="color:var(--clr-accent);width:16px;"></i> +1 800 555 7890</a></li>
+          <li><a href="mailto:support@zenith.com" class="footer-link"><i class="fas fa-envelope" style="color:var(--clr-accent);width:16px;"></i> support@zenith.com</a></li>
+        </ul>
+        <!-- Newsletter -->
+        <div style="margin-top:20px;">
+          <div style="font-size:.8rem;color:rgba(255,255,255,.4);margin-bottom:8px;font-weight:600;text-transform:uppercase;letter-spacing:.07em;">Newsletter</div>
+          <div style="display:flex;gap:0;">
+            <input type="email" placeholder="Your email" style="flex:1;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:var(--radius-md) 0 0 var(--radius-md);padding:10px 14px;color:var(--clr-white);font-size:.875rem;outline:none;" />
+            <button style="background:var(--clr-accent);border:none;border-radius:0 var(--radius-md) var(--radius-md) 0;padding:10px 16px;color:var(--clr-white);cursor:pointer;"><i class="fas fa-paper-plane"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2026 Zenith. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="#" class="footer-bottom-link">Privacy Policy</a>
+        <a href="#" class="footer-bottom-link">Terms of Service</a>
+        <a href="#" class="footer-bottom-link">Cookie Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

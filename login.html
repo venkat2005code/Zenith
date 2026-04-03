@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login – Zenith</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <!-- Optional modern font override for brand feel -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/auth.css" />
+</head>
+
+<body class="auth-page">
+
+  <!-- Top-right Actions (Theme & RTL Toggles) -->
+  <div class="auth-top-actions">
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+      <i class="fas fa-moon"></i>
+    </button>
+    <button class="auth-rtl-toggle">
+      <i class="fas fa-globe"></i>
+    </button>
+  </div>
+
+  <div class="auth-wrapper">
+
+    <!-- LEFT PANEL (Brand / Visual) -->
+    <div class="auth-left">
+      <div class="auth-left-content">
+        <h2>Logistics,<br>engineered<br>for the future.</h2>
+        <p>Join 50,000+ businesses redefining their supply chain with Zenith's ultra-reliable global network.</p>
+      </div>
+    </div>
+
+    <!-- RIGHT PANEL (Form) -->
+    <div class="auth-right">
+
+      <div class="auth-right-inner">
+        <!-- Brand Logo Centered -->
+        <div class="auth-brand-center">
+          <a href="index.html" class="auth-card-logo">
+            <div class="icon-box"><i class="fas fa-paper-plane"></i></div>
+            <span>Zenith</span>
+          </a>
+        </div>
+        <h3 class="auth-heading">Welcome back</h3>
+        <p class="auth-subhead">Don't have an account? <a href="signup.html">Create one for free.</a></p>
+
+        <!-- SOCIAL -->
+        <div class="social-auth-btns">
+          <button class="social-auth-btn google"><i class="fab fa-google" style="color:#EA4335;"></i> Google</button>
+          <button class="social-auth-btn apple"><i class="fab fa-apple"></i> Apple</button>
+        </div>
+
+        <div class="auth-divider">or continue with email</div>
+
+        <form id="login-form" novalidate>
+          <div class="form-group">
+            <label class="form-label" for="login-email">Email Address</label>
+            <input class="form-control" type="email" id="login-email" name="email" placeholder="you@example.com"
+              autocomplete="email" required />
+            <p class="field-error" id="err-email"></p>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="login-password">Password</label>
+            <div class="input-password-wrap">
+              <input class="form-control" type="password" id="login-password" name="password"
+                placeholder="Enter password" autocomplete="current-password" required />
+              <button class="toggle-password" type="button" tabindex="-1">
+                <i class="fas fa-eye-slash"></i>
+              </button>
+            </div>
+            <p class="field-error" id="err-password"></p>
+          </div>
+
+          <div class="auth-options">
+            <div class="check-row">
+              <input type="checkbox" id="remember-me" />
+              <label for="remember-me">Remember me</label>
+            </div>
+            <a href="#" class="auth-forgot-link">Forgot password?</a>
+          </div>
+
+          <button type="submit" class="auth-submit-btn" id="login-submit">
+            <span id="login-btn-text">Sign In <i class="fas fa-arrow-right"
+                style="margin-left:4px; font-size:12px;"></i></span>
+            <span id="login-btn-loading" style="display:none;"><i class="fas fa-circle-notch fa-spin"></i>&nbsp; Signing
+              in…</span>
+          </button>
+        </form>
+
+        <!-- No footer as requested -->
+      </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Toggle Password Vis.
+    const pwdWrap = document.querySelector('.input-password-wrap');
+    if (pwdWrap) {
+      const btn = pwdWrap.querySelector('.toggle-password');
+      const inp = pwdWrap.querySelector('input');
+      btn.addEventListener('click', () => {
+        if (inp.type === 'password') {
+          inp.type = 'text';
+          btn.innerHTML = '<i class="fas fa-eye"></i>';
+        } else {
+          inp.type = 'password';
+          btn.innerHTML = '<i class="fas fa-eye-slash"></i>';
+        }
+      });
+    }
+
+    /* ── LOGIN VALIDATION ─────────────────────────────────── */
+    const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+    function setError(id, msg) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.textContent = msg;
+      el.classList.toggle('visible', !!msg);
+      const inp = el.previousElementSibling?.tagName === 'INPUT' ? el.previousElementSibling : el.previousElementSibling?.querySelector('input');
+      if (inp) {
+        inp.classList.toggle('is-invalid', !!msg);
+        inp.classList.toggle('is-valid', !msg && inp.value.trim() !== '');
+      }
+    }
+
+    function clearError(id) { setError(id, ''); }
+
+    function validateLoginForm() {
+      let ok = true;
+      const email = document.getElementById('login-email');
+      const pwd = document.getElementById('login-password');
+
+      if (!email.value.trim()) { setError('err-email', 'Email address is required.'); ok = false; }
+      else if (!EMAIL_RE.test(email.value.trim())) { setError('err-email', 'Enter a valid email address.'); ok = false; }
+      else clearError('err-email');
+
+      if (!pwd.value) { setError('err-password', 'Password is required.'); ok = false; }
+      else if (pwd.value.length < 8) { setError('err-password', 'Must be at least 8 characters.'); ok = false; }
+      else clearError('err-password');
+
+      return ok;
+    }
+
+    ['login-email', 'login-password'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.addEventListener('input', () => clearError('err-' + id.replace('login-', '')));
+    });
+
+    const loginForm = document.getElementById('login-form');
+    if (loginForm) {
+      loginForm.addEventListener('submit', e => {
+        e.preventDefault();
+        if (!validateLoginForm()) return;
+        document.getElementById('login-btn-text').style.display = 'none';
+        document.getElementById('login-btn-loading').style.display = 'inline-block';
+        document.getElementById('login-submit').disabled = true;
+        setTimeout(() => { window.location.href = 'dashboard-user.html'; }, 1000);
+      });
+    }
+  </script>
+</body>
+
+</html>

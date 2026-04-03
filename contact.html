@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us – Zenith Courier</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-brand">
+      <div class="nav-brand-icon"><i class="fas fa-paper-plane"></i></div>
+      Zenith
+    </a>
+    <ul class="nav-menu">
+      <li class="nav-item">
+        <a href="index.html" class="nav-link">Home <i class="fas fa-chevron-down chevron"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="index.html"  class="dropdown-item"><i class="fas fa-home"></i> Home 1</a></li>
+          <li><a href="index2.html" class="dropdown-item"><i class="fas fa-layer-group"></i> Home 2</a></li>
+        </ul>
+      </li>
+      <li class="nav-item"><a href="services.html"  class="nav-link">Services</a></li>
+      <li class="nav-item"><a href="tracking.html"  class="nav-link">Tracking</a></li>
+      <li class="nav-item"><a href="about.html"     class="nav-link">About</a></li>
+      <li class="nav-item"><a href="contact.html"   class="nav-link active">Contact</a></li>
+      <li class="nav-item">
+        <a href="#" class="nav-link">Dashboards <i class="fas fa-chevron-down chevron"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="dashboard-user.html"  class="dropdown-item"><i class="fas fa-user-circle"></i> User Dashboard</a></li>
+          <li><a href="dashboard-admin.html" class="dropdown-item"><i class="fas fa-shield-halved"></i> Admin Dashboard</a></li>
+        </ul>
+      </li>
+    </ul>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+        <i class="fas fa-moon"></i>
+      </button>
+      <button class="rtl-toggle"><i class="fas fa-globe"></i></button>
+      <a href="login.html"  class="btn btn-outline-primary btn-sm">Login</a>
+      <a href="signup.html" class="btn btn-primary btn-sm">Sign Up</a>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<div class="nav-mobile" id="mobileNav">
+  <a href="#" class="mobile-nav-link" data-dropdown="#mob-drop-home">Home <span class="chevron-m">▾</span></a>
+  <div id="mob-drop-home" class="mobile-dropdown">
+    <a href="index.html"  class="mobile-dropdown-item"><i class="fas fa-home"></i> Home 1</a>
+    <a href="index2.html" class="mobile-dropdown-item"><i class="fas fa-layer-group"></i> Home 2</a>
+  </div>
+  <a href="services.html"  class="mobile-nav-link">Services</a>
+  <a href="tracking.html"  class="mobile-nav-link">Tracking</a>
+  <a href="about.html"     class="mobile-nav-link">About</a>
+  <a href="contact.html"   class="mobile-nav-link active">Contact</a>
+  <a href="#" class="mobile-nav-link" data-dropdown="#mob-drop-dash">Dashboards <span class="chevron-m">▾</span></a>
+  <div id="mob-drop-dash" class="mobile-dropdown">
+    <a href="dashboard-user.html"  class="mobile-dropdown-item"><i class="fas fa-user-circle"></i> User Dashboard</a>
+    <a href="dashboard-admin.html" class="mobile-dropdown-item"><i class="fas fa-shield-halved"></i> Admin Dashboard</a>
+  </div>
+  <div style="display:flex;gap:12px;padding-top:24px;">
+    <a href="login.html"  class="btn btn-outline-primary" style="flex:1;text-align:center;">Login</a>
+    <a href="signup.html" class="btn btn-primary" style="flex:1;text-align:center;">Sign Up</a>
+  </div>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container page-hero-content">
+    <nav class="breadcrumb">
+      <a href="index.html">Home</a><span class="breadcrumb-sep"><i class="fas fa-chevron-right"></i></span>
+      <span class="breadcrumb-current">Contact</span>
+    </nav>
+    <h1 class="fade-in">Get in Touch</h1>
+    <p class="fade-in delay-100">We're here to help. Reach out for support, partnerships, or any question about our services.</p>
+  </div>
+</section>
+
+<!-- CONTACT GRID -->
+<section class="section contact-section">
+  <div class="container">
+    <div class="contact-grid">
+
+      <!-- FORM -->
+      <div class="contact-form-card fade-in">
+        <h3 style="margin-bottom:6px;">Send Us a Message</h3>
+        <p style="color:var(--clr-gray-500);font-size:.875rem;margin-bottom:28px;">Our team responds within 2 business hours.</p>
+        <form id="contact-form" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="ct-name">Full Name <span class="req">*</span></label>
+              <input class="form-control" type="text" id="ct-name" name="name" placeholder="John Doe" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="ct-email">Email Address <span class="req">*</span></label>
+              <input class="form-control" type="email" id="ct-email" name="email" placeholder="john@company.com" required />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="ct-phone">Phone Number</label>
+              <input class="form-control" type="tel" id="ct-phone" name="phone" placeholder="+1 800 555 0000" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="ct-subject">Subject <span class="req">*</span></label>
+              <select class="form-control" id="ct-subject" name="subject" required>
+                <option value="">Select a topic…</option>
+                <option>Shipment Inquiry</option>
+                <option>Tracking Issue</option>
+                <option>Business Partnership</option>
+                <option>Careers</option>
+                <option>Billing & Payments</option>
+                <option>General Question</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="ct-message">Message <span class="req">*</span></label>
+            <textarea class="form-control" id="ct-message" name="message" rows="5" placeholder="Tell us how we can help you…" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block" id="contact-submit">
+            <span id="contact-btn-text"><i class="fas fa-paper-plane"></i>&nbsp; Send Message</span>
+            <span id="contact-btn-loading" style="display:none;"><i class="fas fa-spinner fa-spin"></i>&nbsp; Sending…</span>
+          </button>
+          <div id="contact-success" style="display:none;margin-top:20px;padding:16px 20px;background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.3);border-radius:var(--radius-md);color:var(--clr-success);font-size:.9375rem;font-weight:500;">
+            <i class="fas fa-check-circle"></i>&nbsp; Message sent! We'll get back to you shortly.
+          </div>
+        </form>
+      </div>
+
+      <!-- INFO -->
+      <div class="fade-in delay-100">
+        <div class="contact-info-block">
+          <h3 style="margin-bottom:24px; color:var(--clr-primary);">Contact Information</h3>
+          <div class="info-card">
+            <div class="info-icon" style="background:rgba(249,115,22,.1);color:var(--clr-accent);">
+              <i class="fas fa-headset"></i>
+            </div>
+            <div>
+              <h6>Customer Support</h6>
+              <a href="tel:+18005557890">+1 800 555 7890</a><br>
+              <span style="font-size:.8rem;color:var(--clr-gray-400);">Mon – Sat · 7am – 10pm EST</span>
+            </div>
+          </div>
+          <div class="info-card">
+            <div class="info-icon" style="background:rgba(6,182,212,.1);color:var(--clr-teal);">
+              <i class="fas fa-envelope-open-text"></i>
+            </div>
+            <div>
+              <h6>Email Us</h6>
+              <a href="mailto:support@zenith.com">support@zenith.com</a><br>
+              <a href="mailto:partners@swiftship.com" style="font-size:.875rem;">partners@swiftship.com</a>
+            </div>
+          </div>
+          <div class="info-card">
+            <div class="info-icon" style="background:rgba(34,197,94,.1);color:var(--clr-success);">
+              <i class="fab fa-whatsapp"></i>
+            </div>
+            <div>
+              <h6>WhatsApp</h6>
+              <a href="https://wa.me/18005557890">+1 800 555 7890</a><br>
+              <span style="font-size:.8rem;color:var(--clr-gray-400);">Typically replies in minutes</span>
+            </div>
+          </div>
+          <div class="info-card">
+            <div class="info-icon" style="background:rgba(11,37,69,.1);color:var(--clr-primary);">
+              <i class="fas fa-location-dot"></i>
+            </div>
+            <div>
+              <h6>Headquarters</h6>
+              <span>420 Logistics Blvd, Suite 200<br>New York, NY 10001, USA</span>
+            </div>
+          </div>
+
+          <!-- Support Hours -->
+          <div style="margin-top:24px;padding:20px;background:var(--clr-gray-50);border-radius:var(--radius-md);">
+            <h6 style="margin-bottom:14px;"><i class="fas fa-clock" style="color:var(--clr-accent);margin-right:8px;"></i>Support Hours</h6>
+            <div style="display:flex;flex-direction:column;gap:8px;font-size:.875rem;">
+              <div style="display:flex;justify-content:space-between;"><span style="color:var(--clr-gray-600);">Monday – Friday</span><strong>7:00 AM – 10:00 PM EST</strong></div>
+              <div style="display:flex;justify-content:space-between;"><span style="color:var(--clr-gray-600);">Saturday</span><strong>8:00 AM – 6:00 PM EST</strong></div>
+              <div style="display:flex;justify-content:space-between;"><span style="color:var(--clr-gray-600);">Sunday</span><strong style="color:var(--clr-danger);">Emergency Only</strong></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAP -->
+<section style="padding:0 0 64px;">
+  <div class="container">
+    <div class="map-embed">
+      <iframe
+        src="https://www.openstreetmap.org/export/embed.html?bbox=-74.0281%2C40.7440%2C-73.9717%2C40.7580&layer=mapnik&marker=40.7517%2C-73.9999"
+        title="Zenith HQ – New York City"
+        allowfullscreen
+        loading="lazy">
+      </iframe>
+      <div class="map-pin-label">
+        <i class="fas fa-map-marker-alt" style="color:var(--clr-accent);margin-right:6px;"></i>
+        Zenith HQ · 420 Logistics Blvd, New York, NY
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OFFICE LOCATIONS -->
+<section class="section" style="background:var(--clr-off-white);">
+  <div class="container">
+    <div class="section-header-center fade-in" style="margin-bottom:48px;">
+      <span class="section-label">Global Offices</span>
+      <h2 class="section-title">Find Us Around the World</h2>
+    </div>
+    <div class="grid-4">
+      <div class="office-card fade-in delay-100">
+        <div class="office-card-flag">🇺🇸</div>
+        <h5>New York</h5>
+        <span class="badge badge-accent" style="margin-bottom:10px;">Headquarters</span>
+        <p>420 Logistics Blvd, Suite 200<br>New York, NY 10001</p>
+        <a href="tel:+12125557890" class="office-phone"><i class="fas fa-phone"></i> +1 212 555 7890</a>
+      </div>
+      <div class="office-card fade-in delay-200">
+        <div class="office-card-flag">🇬🇧</div>
+        <h5>London</h5>
+        <span class="badge badge-secondary" style="margin-bottom:10px;">Europe Hub</span>
+        <p>88 Cambridge Street<br>London, SW1V 4QS, UK</p>
+        <a href="tel:+442075557890" class="office-phone"><i class="fas fa-phone"></i> +44 207 555 7890</a>
+      </div>
+      <div class="office-card fade-in delay-300">
+        <div class="office-card-flag">🇦🇪</div>
+        <h5>Dubai</h5>
+        <span class="badge badge-secondary" style="margin-bottom:10px;">MENA Hub</span>
+        <p>12F Business Bay Tower<br>Dubai, UAE</p>
+        <a href="tel:+97145557890" class="office-phone"><i class="fas fa-phone"></i> +971 4 555 7890</a>
+      </div>
+      <div class="office-card fade-in delay-100">
+        <div class="office-card-flag">🇸🇬</div>
+        <h5>Singapore</h5>
+        <span class="badge badge-secondary" style="margin-bottom:10px;">Asia Pacific</span>
+        <p>30 Pasir Panjang Road<br>Singapore 117440</p>
+        <a href="tel:+6562225678" class="office-phone"><i class="fas fa-phone"></i> +65 6222 5678</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section-sm cta-section">
+  <div class="container">
+    <div class="cta-inner">
+      <div>
+        <span class="section-label" style="color:rgba(255,255,255,.75);">Ready to Ship?</span>
+        <h2 style="color:var(--clr-white);margin-bottom:12px;">Start Your First Shipment Today</h2>
+        <p style="color:rgba(255,255,255,.8);">Set up a free account and get your first delivery quote in under 60 seconds.</p>
+      </div>
+      <div class="cta-btns">
+        <a href="signup.html"    class="btn btn-white btn-lg">Create Free Account</a>
+        <a href="tracking.html"  class="btn btn-outline btn-lg">Track a Shipment</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <!-- Brand -->
+      <div>
+        <a href="index.html" class="nav-brand footer-brand">
+          <div class="nav-brand-icon"><i class="fas fa-paper-plane"></i></div>
+          Zenith
+        </a>
+        <p class="footer-desc">Your trusted partner for fast, reliable courier and delivery services across the globe. Delivering smiles since 2010.</p>
+        <div class="footer-socials">
+          <a href="#" class="social-btn" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-btn" aria-label="Twitter/X"><i class="fab fa-x-twitter"></i></a>
+          <a href="#" class="social-btn" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <!-- Services -->
+      <div>
+        <h6 class="footer-col-title">Services</h6>
+        <ul class="footer-links">
+          <li><a href="services.html" class="footer-link"><i class="fas fa-chevron-right"></i> Express Delivery</a></li>
+          <li><a href="services.html" class="footer-link"><i class="fas fa-chevron-right"></i> International Shipping</a></li>
+          <li><a href="services.html" class="footer-link"><i class="fas fa-chevron-right"></i> Cold Chain Logistics</a></li>
+          <li><a href="services.html" class="footer-link"><i class="fas fa-chevron-right"></i> Freight Solutions</a></li>
+          <li><a href="services.html" class="footer-link"><i class="fas fa-chevron-right"></i> Warehousing</a></li>
+        </ul>
+      </div>
+      <!-- Company -->
+      <div>
+        <h6 class="footer-col-title">Company</h6>
+        <ul class="footer-links">
+          <li><a href="about.html"   class="footer-link"><i class="fas fa-chevron-right"></i> About Us</a></li>
+          <li><a href="#"            class="footer-link"><i class="fas fa-chevron-right"></i> Careers</a></li>
+          <li><a href="#"            class="footer-link"><i class="fas fa-chevron-right"></i> Press Room</a></li>
+          <li><a href="#"            class="footer-link"><i class="fas fa-chevron-right"></i> Partnerships</a></li>
+          <li><a href="contact.html" class="footer-link"><i class="fas fa-chevron-right"></i> Contact</a></li>
+        </ul>
+      </div>
+      <!-- Contact -->
+      <div>
+        <h6 class="footer-col-title">Contact Us</h6>
+        <ul class="footer-links">
+          <li class="footer-link" style="cursor:default;"><i class="fas fa-map-marker-alt" style="color:var(--clr-accent);width:16px;"></i> 420 Logistics Blvd, New York, NY</li>
+          <li><a href="tel:+18005557890" class="footer-link"><i class="fas fa-phone" style="color:var(--clr-accent);width:16px;"></i> +1 800 555 7890</a></li>
+          <li><a href="mailto:support@zenith.com" class="footer-link"><i class="fas fa-envelope" style="color:var(--clr-accent);width:16px;"></i> support@zenith.com</a></li>
+        </ul>
+        <!-- Newsletter -->
+        <div style="margin-top:20px;">
+          <div style="font-size:.8rem;color:rgba(255,255,255,.4);margin-bottom:8px;font-weight:600;text-transform:uppercase;letter-spacing:.07em;">Newsletter</div>
+          <div style="display:flex;gap:0;">
+            <input type="email" placeholder="Your email" style="flex:1;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:var(--radius-md) 0 0 var(--radius-md);padding:10px 14px;color:var(--clr-white);font-size:.875rem;outline:none;" />
+            <button style="background:var(--clr-accent);border:none;border-radius:0 var(--radius-md) var(--radius-md) 0;padding:10px 16px;color:var(--clr-white);cursor:pointer;"><i class="fas fa-paper-plane"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2026 Zenith. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="#" class="footer-bottom-link">Privacy Policy</a>
+        <a href="#" class="footer-bottom-link">Terms of Service</a>
+        <a href="#" class="footer-bottom-link">Cookie Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

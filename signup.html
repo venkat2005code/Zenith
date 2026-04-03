@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Up – Zenith</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <!-- Optional modern font override for brand feel -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/auth.css" />
+</head>
+
+<body class="auth-page">
+
+  <!-- Top-right Actions (Theme & RTL Toggles) -->
+  <div class="auth-top-actions">
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+      <i class="fas fa-moon"></i>
+    </button>
+    <button class="auth-rtl-toggle">
+      <i class="fas fa-globe"></i>
+    </button>
+  </div>
+
+  <div class="auth-wrapper">
+
+    <!-- LEFT PANEL (Brand / Visual) -->
+    <div class="auth-left">
+      <div class="auth-left-content">
+        <h2>The smartest way<br>to manage logistics.</h2>
+        <p>Join 50,000+ businesses redefining their supply chain with Zenith's ultra-reliable global network. Start
+          shipping today.</p>
+      </div>
+    </div>
+
+    <!-- RIGHT PANEL (Form) -->
+    <div class="auth-right">
+
+      <div class="auth-right-inner">
+        <!-- Brand Logo Centered -->
+        <div class="auth-brand-center">
+          <a href="index.html" class="auth-card-logo">
+            <div class="icon-box"><i class="fas fa-paper-plane"></i></div>
+            <span>Zenith</span>
+          </a>
+        </div>
+        <h3 class="auth-heading">Create account</h3>
+        <p class="auth-subhead">Already have an account? <a href="login.html">Sign in.</a></p>
+
+        <!-- SOCIAL -->
+        <div class="social-auth-btns">
+          <button class="social-auth-btn google"><i class="fab fa-google" style="color:#EA4335;"></i> Google</button>
+          <button class="social-auth-btn apple"><i class="fab fa-apple"></i> Apple</button>
+        </div>
+
+        <div class="auth-divider">or sign up with email</div>
+
+        <form id="signup-form" novalidate>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="su-fname">First Name</label>
+              <input class="form-control" type="text" id="su-fname" name="fname" placeholder="Jane"
+                autocomplete="given-name" required />
+              <p class="field-error" id="err-fname"></p>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="su-lname">Last Name</label>
+              <input class="form-control" type="text" id="su-lname" name="lname" placeholder="Doe"
+                autocomplete="family-name" required />
+              <p class="field-error" id="err-lname"></p>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="su-email">Email Address</label>
+            <input class="form-control" type="email" id="su-email" name="email" placeholder="you@example.com"
+              autocomplete="email" required />
+            <p class="field-error" id="err-su-email"></p>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="su-password">Password</label>
+            <div class="input-password-wrap">
+              <input class="form-control" type="password" id="su-password" name="password"
+                placeholder="Create a strong password" autocomplete="new-password" required />
+              <button class="toggle-password" type="button" tabindex="-1">
+                <i class="fas fa-eye-slash"></i>
+              </button>
+            </div>
+            <div class="password-strength" id="pw-strength">
+              <div class="ps-bar" id="ps-bar"></div>
+            </div>
+            <p class="ps-label" id="ps-label"></p>
+            <p class="field-error" id="err-su-password"></p>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="su-confirm">Confirm Password</label>
+            <div class="input-password-wrap">
+              <input class="form-control" type="password" id="su-confirm" name="confirm"
+                placeholder="Repeat your password" autocomplete="new-password" required />
+            </div>
+            <p class="field-error" id="err-confirm"></p>
+          </div>
+
+          <div class="auth-options" style="margin-bottom:12px;">
+            <div class="check-row">
+              <input type="checkbox" id="agree-terms" required />
+              <label for="agree-terms">I agree to the <a href="#">Terms of Service</a> &amp; <a href="#">Privacy
+                  Policy</a></label>
+            </div>
+          </div>
+          <p class="field-error" id="err-terms" style="margin-bottom:20px;"></p>
+
+          <button type="submit" class="auth-submit-btn" id="signup-submit">
+            <span id="signup-btn-text">Create Free Account <i class="fas fa-arrow-right"
+                style="margin-left:4px; font-size:12px;"></i></span>
+            <span id="signup-btn-loading" style="display:none;"><i class="fas fa-circle-notch fa-spin"></i>&nbsp;
+              Creating account…</span>
+          </button>
+        </form>
+
+        <!-- No footer as requested -->
+      </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Toggle Password
+    const pwdWrap = document.querySelector('.input-password-wrap');
+    if (pwdWrap) {
+      const btn = pwdWrap.querySelector('.toggle-password');
+      const inp = pwdWrap.querySelector('input');
+      btn.addEventListener('click', () => {
+        if (inp.type === 'password') {
+          inp.type = 'text';
+          btn.innerHTML = '<i class="fas fa-eye"></i>';
+        } else {
+          inp.type = 'password';
+          btn.innerHTML = '<i class="fas fa-eye-slash"></i>';
+        }
+      });
+    }
+
+    /* ── SIGNUP VALIDATION ─────────────────────────────────── */
+    const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+    const NAME_RE = /^[A-Za-z\u00C0-\u024F ''-]{2,50}$/;
+
+    function setErr(id, msg) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.textContent = msg;
+      el.classList.toggle('visible', !!msg);
+      let node = el.previousElementSibling;
+      if (node && node.id && (node.id === 'pw-strength' || node.id === 'ps-label')) node = node.previousElementSibling;
+      const inp = node && (node.tagName === 'INPUT' ? node : node.querySelector('input'));
+      if (inp) {
+        inp.classList.toggle('is-invalid', !!msg);
+        inp.classList.toggle('is-valid', !msg && inp.value.trim() !== '');
+      }
+    }
+
+    function clrErr(id) { setErr(id, ''); }
+
+    function validateSignup() {
+      let ok = true;
+      const fname = document.getElementById('su-fname');
+      const lname = document.getElementById('su-lname');
+      const email = document.getElementById('su-email');
+      const pwd = document.getElementById('su-password');
+      const confirm = document.getElementById('su-confirm');
+      const terms = document.getElementById('agree-terms');
+
+      // First name
+      if (!fname.value.trim()) { setErr('err-fname', 'First name required.'); ok = false; }
+      else { clrErr('err-fname'); }
+
+      // Last name
+      if (!lname.value.trim()) { setErr('err-lname', 'Last name required.'); ok = false; }
+      else { clrErr('err-lname'); }
+
+      // Email
+      if (!email.value.trim()) { setErr('err-su-email', 'Email required.'); ok = false; }
+      else if (!EMAIL_RE.test(email.value.trim())) { setErr('err-su-email', 'Valid email required.'); ok = false; }
+      else { clrErr('err-su-email'); }
+
+      // Password
+      const p = pwd.value;
+      if (!p) { setErr('err-su-password', 'Password required.'); ok = false; }
+      else if (p.length < 8) { setErr('err-su-password', 'Min 8 chars.'); ok = false; }
+      else { clrErr('err-su-password'); }
+
+      // Confirm password
+      if (!confirm.value) { setErr('err-confirm', 'Please confirm.'); ok = false; }
+      else if (confirm.value !== p) { setErr('err-confirm', 'Passwords mismatch.'); ok = false; }
+      else { clrErr('err-confirm'); }
+
+      // Terms
+      if (!terms.checked) { setErr('err-terms', 'You must agree to continue.'); ok = false; }
+      else { clrErr('err-terms'); }
+
+      return ok;
+    }
+
+    ['su-fname', 'su-lname', 'su-email', 'su-password', 'su-confirm'].forEach(fid => {
+      const el = document.getElementById(fid);
+      if (el) el.addEventListener('input', () => clrErr('err-' + fid.replace('su-', '')));
+    });
+    const tbox = document.getElementById('agree-terms');
+    if (tbox) tbox.addEventListener('change', () => clrErr('err-terms'));
+
+    document.getElementById('su-confirm').addEventListener('input', e => {
+      const p = document.getElementById('su-password').value;
+      if (e.target.value && e.target.value !== p) setErr('err-confirm', 'Passwords mismatch.');
+      else clrErr('err-confirm');
+    });
+
+    const signupForm = document.getElementById('signup-form');
+    if (signupForm) {
+      signupForm.addEventListener('submit', e => {
+        e.preventDefault();
+        if (!validateSignup()) return;
+        document.getElementById('signup-btn-text').style.display = 'none';
+        document.getElementById('signup-btn-loading').style.display = 'inline-block';
+        document.getElementById('signup-submit').disabled = true;
+        setTimeout(() => { window.location.href = 'dashboard-user.html'; }, 1000);
+      });
+    }
+  </script>
+</body>
+
+</html>
