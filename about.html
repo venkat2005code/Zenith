@@ -41,7 +41,10 @@
       <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
         <i class="fas fa-moon"></i>
       </button>
-      <button class="rtl-toggle" id="main-rtl-toggle"><i class="fas fa-globe"></i></button>
+      <button class="rtl-toggle" title="Toggle RTL/LTR">
+        <i class="fas fa-right-left"></i>
+        <span>RTL/LTR</span>
+      </button>
       <a href="login.html"  class="btn btn-outline-primary btn-sm">Login</a>
       <a href="signup.html" class="btn btn-primary btn-sm">Sign Up</a>
       <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
@@ -69,24 +72,40 @@
   </div>
 </div>
 
-<!-- PAGE HERO -->
-<section class="page-hero" style="background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1400&auto=format');">
-  <div class="container page-hero-content page-hero-2col">
-    <div>
-      <nav class="breadcrumb">
-        <a href="index.html">Home</a><span class="breadcrumb-sep"><i class="fas fa-chevron-right"></i></span>
-        <span class="breadcrumb-current">About</span>
-      </nav>
-      <h1 class="fade-in about-us-single-line">About Zenith</h1>
-      <p class="fade-in delay-100">We've been moving the world's packages with precision, care, and technology since 2010. Our mission: make logistics effortless for everyone.</p>
-      <div class="fade-in delay-200 about-hero-stats" id="about-stats-container">
-        <div><div style="font-family:var(--font-heading);font-size:1.75rem;font-weight:900;color:var(--clr-white);line-height:1.2;">16+</div><div style="font-size:.875rem;color:rgba(255,255,255,.8);">Years of Excellence</div></div>
-        <div><div style="font-family:var(--font-heading);font-size:1.75rem;font-weight:900;color:var(--clr-white);line-height:1.2;">200+</div><div style="font-size:.875rem;color:rgba(255,255,255,.8);">Countries Served</div></div>
-        <div><div style="font-family:var(--font-heading);font-size:1.75rem;font-weight:900;color:var(--clr-white);line-height:1.2;">4,800+</div><div style="font-size:.875rem;color:rgba(255,255,255,.8);">Team Members</div></div>
+<!-- PAGE HERO: RECONSTRUCTED V2 -->
+<section class="about-v2-hero">
+  <div class="hero-bg-overlay"></div>
+  <div class="container about-v2-content">
+    <nav class="breadcrumb fade-in">
+      <a href="index.html">Home</a>
+      <span class="breadcrumb-sep"><i class="fas fa-chevron-right"></i></span>
+      <span class="breadcrumb-current">About Us</span>
+    </nav>
+    
+    <h1 class="fade-in delay-100">Our Legacy, <br><span class="text-accent">Your Future</span></h1>
+    <p class="fade-in delay-200">For over 16 years, Zenith has pioneered global logistics, driving efficiency and reliability across borders, ensuring seamless movement for your business.</p>
+    
+    <div class="about-v2-stats fade-in delay-300">
+      <div class="stat-glass-card">
+        <div class="stat-val">16+</div>
+        <div class="stat-label">Years</div>
+        <div class="stat-desc">Established 2010</div>
+      </div>
+      <div class="stat-glass-card">
+        <div class="stat-val">200+</div>
+        <div class="stat-label">Countries</div>
+        <div class="stat-desc">Global Network</div>
+      </div>
+      <div class="stat-glass-card">
+        <div class="stat-val">5K+</div>
+        <div class="stat-label">Experts</div>
+        <div class="stat-desc">Dedicated Team</div>
       </div>
     </div>
-    <div class="fade-in-right delay-200" style="position:relative;">
-      <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=700&auto=format&q=80" alt="Zenith team" style="border-radius:var(--radius-xl);height:320px;width:100%;object-fit:cover;box-shadow:var(--shadow-xl);" />
+
+    <div class="about-v2-actions fade-in delay-400">
+      <a href="#story" class="btn btn-primary btn-lg">Learn More About Us <i class="fas fa-arrow-down"></i></a>
+      <a href="contact.html" class="btn btn-outline btn-lg">Meet The Team</a>
     </div>
   </div>
 </section>

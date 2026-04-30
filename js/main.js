@@ -111,6 +111,50 @@ function initNavbarScroll() {
   onScroll();
 }
 
+/* ── DESKTOP DROPDOWN (click toggle for tablet/touch) ─── */
+function initDesktopDropdowns() {
+  const navItems = document.querySelectorAll('.nav-item');
+
+  navItems.forEach(item => {
+    const link = item.querySelector('.nav-link');
+    const dropdown = item.querySelector('.dropdown-menu');
+    if (!link || !dropdown) return;
+
+    link.addEventListener('click', e => {
+      // At tablet/desktop widths, toggle on click for touch devices
+      if (window.innerWidth > 991) {
+        // If it's a link to a page (not just #), and we are on desktop, 
+        // we might want to follow it on second click.
+        const href = link.getAttribute('href');
+        
+        if (href && href !== '#') {
+          // If already open, follow the link
+          if (item.classList.contains('dropdown-open')) {
+            return; 
+          }
+        }
+        
+        e.preventDefault();
+        e.stopPropagation();
+        
+        const isOpen = item.classList.toggle('dropdown-open');
+
+        // Close all other open dropdowns
+        navItems.forEach(other => {
+          if (other !== item) other.classList.remove('dropdown-open');
+        });
+      }
+    });
+  });
+
+  // Close dropdown on outside click
+  document.addEventListener('click', e => {
+    if (!e.target.closest('.nav-item')) {
+      navItems.forEach(item => item.classList.remove('dropdown-open'));
+    }
+  });
+}
+
 /* ── MOBILE NAV ─────────────────────────────────────────── */
 function initMobileNav() {
   const hamburger = document.querySelector('.hamburger');
@@ -127,10 +171,16 @@ function initMobileNav() {
   document.querySelectorAll('.mobile-nav-link[data-dropdown]').forEach(link => {
     link.addEventListener('click', e => {
       e.preventDefault();
-      const target = document.querySelector(link.dataset.dropdown);
-      if (target) target.classList.toggle('show');
-      const chevron = link.querySelector('.chevron-m');
-      if (chevron) chevron.style.transform = target.classList.contains('show') ? 'rotate(180deg)' : '';
+      e.stopPropagation();
+      const dropdownId = link.getAttribute('data-dropdown');
+      const target = document.querySelector(dropdownId);
+      if (target) {
+        const isShown = target.classList.toggle('show');
+        const chevron = link.querySelector('.chevron-m');
+        if (chevron) {
+          chevron.style.transform = isShown ? 'rotate(180deg)' : 'rotate(0deg)';
+        }
+      }
     });
   });
 
@@ -404,6 +454,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initRTLToggle();
   initThemeToggle();
   initNavbarScroll();
+  initDesktopDropdowns();
   initMobileNav();
   initAnimations();
   initCounters();

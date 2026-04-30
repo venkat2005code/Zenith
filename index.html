@@ -1,485 +1,585 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Zenith – Courier & Delivery Service</title>
-  <meta name="description" content="Fast, reliable courier and delivery services worldwide. Track your shipment in real time." />
+  <meta name="description"
+    content="Fast, reliable courier and delivery services worldwide. Track your shipment in real time." />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <!-- Styles -->
   <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
 
-<!-- ═══════════════════════════════════════════════════════
+  <!-- ═══════════════════════════════════════════════════════
      NAVBAR
 ════════════════════════════════════════════════════════ -->
-<nav class="navbar" id="navbar">
-  <div class="container nav-inner">
+  <nav class="navbar" id="navbar">
+    <div class="container nav-inner">
 
-    <!-- Brand -->
-    <a href="index.html" class="nav-brand">
-      <div class="nav-brand-icon"><i class="fas fa-paper-plane"></i></div>
-      Zenith
-    </a>
+      <!-- Brand -->
+      <a href="index.html" class="nav-brand">
+        <div class="nav-brand-icon"><i class="fas fa-paper-plane"></i></div>
+        Zenith
+      </a>
 
-    <!-- Desktop Menu -->
-    <ul class="nav-menu">
-      <!-- Home dropdown -->
-      <li class="nav-item">
-        <a href="index.html" class="nav-link active">
-          Home <i class="fas fa-chevron-down chevron"></i>
-        </a>
-        <ul class="dropdown-menu">
-          <li><a href="index.html"  class="dropdown-item"><i class="fas fa-home"></i> Home 1</a></li>
-          <li><a href="index2.html" class="dropdown-item"><i class="fas fa-layer-group"></i> Home 2</a></li>
-        </ul>
-      </li>
-      <li class="nav-item"><a href="services.html"  class="nav-link">Services</a></li>
-      <li class="nav-item"><a href="tracking.html"  class="nav-link">Tracking</a></li>
-      <li class="nav-item"><a href="about.html"     class="nav-link">About</a></li>
-      <li class="nav-item"><a href="contact.html"   class="nav-link">Contact</a></li>
-      <!-- Dashboards dropdown -->
-      <li class="nav-item">
-        <a href="#" class="nav-link">
-          Dashboards <i class="fas fa-chevron-down chevron"></i>
-        </a>
-        <ul class="dropdown-menu">
-          <li><a href="dashboard-user.html"  class="dropdown-item"><i class="fas fa-user-circle"></i> User Dashboard</a></li>
-          <li><a href="dashboard-admin.html" class="dropdown-item"><i class="fas fa-shield-halved"></i> Admin Dashboard</a></li>
-        </ul>
-      </li>
-    </ul>
+      <!-- Desktop Menu -->
+      <ul class="nav-menu">
+        <!-- Home dropdown -->
+        <li class="nav-item">
+          <a href="index.html" class="nav-link active">
+            Home <i class="fas fa-chevron-down chevron"></i>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="index.html" class="dropdown-item"><i class="fas fa-home"></i> Home 1</a></li>
+            <li><a href="index2.html" class="dropdown-item"><i class="fas fa-layer-group"></i> Home 2</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+        <li class="nav-item"><a href="tracking.html" class="nav-link">Tracking</a></li>
+        <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+        <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        <!-- Dashboards dropdown -->
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            Dashboards <i class="fas fa-chevron-down chevron"></i>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="dashboard-user.html" class="dropdown-item"><i class="fas fa-user-circle"></i> User
+                Dashboard</a></li>
+            <li><a href="dashboard-admin.html" class="dropdown-item"><i class="fas fa-shield-halved"></i> Admin
+                Dashboard</a></li>
+          </ul>
+        </li>
+      </ul>
 
-    <!-- Actions -->
-    <div class="nav-actions">
-      <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
-        <i class="fas fa-moon"></i>
-      </button>
-      <button class="rtl-toggle" >
-        <i class="fas fa-globe"></i>
-      </button>
-      <a href="login.html"  class="btn btn-outline-primary btn-sm">Login</a>
-      <a href="signup.html" class="btn btn-primary btn-sm">Sign Up</a>
-      <!-- Hamburger -->
-      <button class="hamburger" id="hamburger" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
+      <!-- Actions -->
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+          <i class="fas fa-moon"></i>
+        </button>
+        <button class="rtl-toggle" title="Toggle RTL/LTR">
+          <i class="fas fa-right-left"></i>
+          <span>RTL/LTR</span>
+        </button>
+        <a href="login.html" class="btn btn-outline-primary btn-sm">Login</a>
+        <a href="signup.html" class="btn btn-primary btn-sm">Sign Up</a>
+        <!-- Hamburger -->
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
     </div>
+  </nav>
 
+  <!-- Mobile Nav -->
+  <div class="nav-mobile" id="mobileNav">
+    <a href="#" class="mobile-nav-link" data-dropdown="#mob-drop-home">Home <span class="chevron-m">▾</span></a>
+    <div id="mob-drop-home" class="mobile-dropdown">
+      <a href="index.html" class="mobile-dropdown-item"><i class="fas fa-home"></i> Home 1</a>
+      <a href="index2.html" class="mobile-dropdown-item"><i class="fas fa-layer-group"></i> Home 2</a>
+    </div>
+    <a href="services.html" class="mobile-nav-link">Services</a>
+    <a href="tracking.html" class="mobile-nav-link">Tracking</a>
+    <a href="about.html" class="mobile-nav-link">About</a>
+    <a href="contact.html" class="mobile-nav-link">Contact</a>
+    <a href="#" class="mobile-nav-link" data-dropdown="#mob-drop-dash">Dashboards <span class="chevron-m">▾</span></a>
+    <div id="mob-drop-dash" class="mobile-dropdown">
+      <a href="dashboard-user.html" class="mobile-dropdown-item"><i class="fas fa-user-circle"></i> User Dashboard</a>
+      <a href="dashboard-admin.html" class="mobile-dropdown-item"><i class="fas fa-shield-halved"></i> Admin
+        Dashboard</a>
+    </div>
+    <div style="display:flex;gap:12px;padding-top:24px;">
+      <a href="login.html" class="btn btn-outline-primary" style="flex:1;text-align:center;">Login</a>
+      <a href="signup.html" class="btn btn-primary" style="flex:1;text-align:center;">Sign Up</a>
+    </div>
   </div>
-</nav>
 
-<!-- Mobile Nav -->
-<div class="nav-mobile" id="mobileNav">
-  <a href="#" class="mobile-nav-link" data-dropdown="#mob-drop-home">Home <span class="chevron-m">▾</span></a>
-  <div id="mob-drop-home" class="mobile-dropdown">
-    <a href="index.html"  class="mobile-dropdown-item"><i class="fas fa-home"></i> Home 1</a>
-    <a href="index2.html" class="mobile-dropdown-item"><i class="fas fa-layer-group"></i> Home 2</a>
-  </div>
-  <a href="services.html"  class="mobile-nav-link">Services</a>
-  <a href="tracking.html"  class="mobile-nav-link">Tracking</a>
-  <a href="about.html"     class="mobile-nav-link">About</a>
-  <a href="contact.html"   class="mobile-nav-link">Contact</a>
-  <a href="#" class="mobile-nav-link" data-dropdown="#mob-drop-dash">Dashboards <span class="chevron-m">▾</span></a>
-  <div id="mob-drop-dash" class="mobile-dropdown">
-    <a href="dashboard-user.html"  class="mobile-dropdown-item"><i class="fas fa-user-circle"></i> User Dashboard</a>
-    <a href="dashboard-admin.html" class="mobile-dropdown-item"><i class="fas fa-shield-halved"></i> Admin Dashboard</a>
-  </div>
-  <div style="display:flex;gap:12px;padding-top:24px;">
-    <a href="login.html"  class="btn btn-outline-primary" style="flex:1;text-align:center;">Login</a>
-    <a href="signup.html" class="btn btn-primary" style="flex:1;text-align:center;">Sign Up</a>
-  </div>
-</div>
-
-<!-- ═══════════════════════════════════════════════════════
+  <!-- ═══════════════════════════════════════════════════════
      HERO – HOME 1
 ════════════════════════════════════════════════════════ -->
-<section class="hero-1" id="hero">
-  <div class="hero-1-grid"></div>
-  <div class="container hero-1-container">
+  <section class="hero-1" id="hero">
+    <div class="hero-1-grid"></div>
+    <div class="container hero-1-container">
 
-    <!-- Left Content -->
-    <div class="hero-1-content">
-      <div class="hero-1-label fade-in">
-        <i class="fas fa-circle" style="color:var(--clr-success);font-size:.5rem;"></i>
-        #1 Trusted Courier Service
+      <!-- Left Content -->
+      <div class="hero-1-content">
+        <div class="hero-1-label fade-in">
+          <i class="fas fa-circle" style="color:var(--clr-success);font-size:.5rem;"></i>
+          #1 Trusted Courier Service
+        </div>
+        <h1 class="fade-in delay-100">
+          Deliver Anything,<br>
+          <span class="highlight">Anywhere</span> – Fast.
+        </h1>
+        <p class="hero-1-desc fade-in delay-200">
+          Zenith connects businesses and individuals with reliable express, standard, and international delivery
+          solutions — powered by real-time tracking.
+        </p>
+
+        <!-- Tracking Bar -->
+        <form class="tracking-bar fade-in delay-300" id="hero-tracking-form">
+          <i class="fas fa-search" style="color:var(--clr-gray-400);flex-shrink:0;"></i>
+          <input type="text" placeholder="Enter tracking number or order ID…" />
+          <button type="submit" class="btn btn-primary">
+            <i class="fas fa-location-arrow"></i> Track
+          </button>
+        </form>
+
+        <!-- Stats -->
+        <div class="hero-stats fade-in delay-400">
+          <div class="hero-stat-item">
+            <div class="stat-num"><span data-count="12">0</span>M<span>+</span></div>
+            <div class="stat-lbl" style="color:rgba(255,255,255,.9);">Packages Delivered</div>
+          </div>
+          <div class="hero-stat-item">
+            <div class="stat-num"><span data-count="180">0</span><span>+</span></div>
+            <div class="stat-lbl" style="color:rgba(255,255,255,.9);">Cities Covered</div>
+          </div>
+          <div class="hero-stat-item">
+            <div class="stat-num"><span data-count="98">0</span><span>%</span></div>
+            <div class="stat-lbl" style="color:rgba(255,255,255,.9);">On-time Delivery</div>
+          </div>
+        </div>
       </div>
-      <h1 class="fade-in delay-100">
-        Deliver Anything,<br>
-        <span class="highlight">Anywhere</span> – Fast.
-      </h1>
-      <p class="hero-1-desc fade-in delay-200">
-        Zenith connects businesses and individuals with reliable express, standard, and international delivery solutions — powered by real-time tracking.
-      </p>
 
-      <!-- Tracking Bar -->
-      <form class="tracking-bar fade-in delay-300" id="hero-tracking-form">
-        <i class="fas fa-search" style="color:var(--clr-gray-400);flex-shrink:0;"></i>
-        <input type="text" placeholder="Enter tracking number or order ID…" />
-        <button type="submit" class="btn btn-primary">
-          <i class="fas fa-location-arrow"></i> Track
-        </button>
-      </form>
-
-      <!-- Stats -->
-      <div class="hero-stats fade-in delay-400">
-        <div class="hero-stat-item">
-          <div class="stat-num"><span data-count="12">0</span>M<span>+</span></div>
-          <div class="stat-lbl" style="color:rgba(255,255,255,.9);">Packages Delivered</div>
+      <!-- Right Media -->
+      <div class="hero-1-media fade-in-right delay-200" style="position:relative;">
+        <div class="hero-1-img">
+          <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&auto=format&q=80"
+            alt="Delivery courier with package" loading="eager" />
         </div>
-        <div class="hero-stat-item">
-          <div class="stat-num"><span data-count="180">0</span><span>+</span></div>
-          <div class="stat-lbl" style="color:rgba(255,255,255,.9);">Cities Covered</div>
+        <!-- Float card 1 -->
+        <div class="hero-float-card hero-float-card-1">
+          <div class="float-icon float-icon-orange"><i class="fas fa-truck"></i></div>
+          <div>
+            <div class="float-card-label">Live Tracking</div>
+            <div class="float-card-value">Order #SW‑78432</div>
+            <div style="font-size:.7rem;color:var(--clr-teal);margin-top:2px;font-weight:600;"><i class="fas fa-circle"
+                style="font-size:.4rem;vertical-align:middle;"></i> Out for delivery</div>
+          </div>
         </div>
-        <div class="hero-stat-item">
-          <div class="stat-num"><span data-count="98">0</span><span>%</span></div>
-          <div class="stat-lbl" style="color:rgba(255,255,255,.9);">On-time Delivery</div>
+        <!-- Float card 2 -->
+        <div class="hero-float-card hero-float-card-2">
+          <div class="float-icon float-icon-green"><i class="fas fa-check-circle"></i></div>
+          <div>
+            <div class="float-card-label">Just Delivered</div>
+            <div class="float-card-value">2 mins ago</div>
+          </div>
         </div>
       </div>
+
     </div>
+  </section>
 
-    <!-- Right Media -->
-    <div class="hero-1-media fade-in-right delay-200" style="position:relative;">
-      <div class="hero-1-img">
-        <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&auto=format&q=80" alt="Delivery courier with package" loading="eager" />
-      </div>
-      <!-- Float card 1 -->
-      <div class="hero-float-card hero-float-card-1">
-        <div class="float-icon float-icon-orange"><i class="fas fa-truck"></i></div>
-        <div>
-          <div class="float-card-label">Live Tracking</div>
-          <div class="float-card-value">Order #SW‑78432</div>
-          <div style="font-size:.7rem;color:var(--clr-teal);margin-top:2px;font-weight:600;"><i class="fas fa-circle" style="font-size:.4rem;vertical-align:middle;"></i> Out for delivery</div>
-        </div>
-      </div>
-      <!-- Float card 2 -->
-      <div class="hero-float-card hero-float-card-2">
-        <div class="float-icon float-icon-green"><i class="fas fa-check-circle"></i></div>
-        <div>
-          <div class="float-card-label">Just Delivered</div>
-          <div class="float-card-value">2 mins ago</div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════
+  <!-- ═══════════════════════════════════════════════════════
      OUR SERVICES
 ════════════════════════════════════════════════════════ -->
-<section class="section services-section">
-  <div class="container">
-    <div class="section-header-center fade-in" style="margin-bottom:56px;">
-      <span class="section-label">What We Offer</span>
-      <h2 class="section-title">Shipping Services <br>Built for Every Need</h2>
-      <p class="section-desc">From same-day urban drops to cross-border freight, we have a delivery solution tailored for you.</p>
-    </div>
+  <section class="section services-section">
+    <div class="container">
+      <div class="section-header-center fade-in" style="margin-bottom:56px;">
+        <span class="section-label">What We Offer</span>
+        <h2 class="section-title">Shipping Services <br>Built for Every Need</h2>
+        <p class="section-desc">From same-day urban drops to cross-border freight, we have a delivery solution tailored
+          for you.</p>
+      </div>
 
-    <div class="grid-3" style="align-items:stretch;">
-      <!-- Card 1 -->
-      <div class="service-card fade-in delay-100">
-        <div class="card-icon card-icon-accent"><i class="fas fa-bolt"></i></div>
-        <h4>Express Delivery</h4>
-        <p>Same-day and next-day delivery to major city destinations. Priority handling throughout the journey.</p>
-        <a href="services.html" class="cta-link">Learn more <i class="fas fa-arrow-right"></i></a>
-      </div>
-      <!-- Card 2 -->
-      <div class="service-card fade-in delay-200">
-        <div class="card-icon card-icon-primary"><i class="fas fa-globe-americas"></i></div>
-        <h4>International Shipping</h4>
-        <p>Worldwide freight solutions covering 200+ countries with full customs brokerage and documentation support.</p>
-        <a href="services.html" class="cta-link">Learn more <i class="fas fa-arrow-right"></i></a>
-      </div>
-      <!-- Card 3 -->
-      <div class="service-card fade-in delay-300">
-        <div class="card-icon card-icon-teal"><i class="fas fa-snowflake"></i></div>
-        <h4>Cold Chain Logistics</h4>
-        <p>Temperature-controlled shipping for pharmaceuticals, food & perishable goods with unbroken cold chain monitoring.</p>
-        <a href="services.html" class="cta-link">Learn more <i class="fas fa-arrow-right"></i></a>
-      </div>
-      <!-- Card 4 -->
-      <div class="service-card fade-in delay-100">
-        <div class="card-icon card-icon-success"><i class="fas fa-boxes-stacked"></i></div>
-        <h4>Warehousing & Fulfilment</h4>
-        <p>End-to-end e-commerce logistics with pick, pack, storage, and distribution across regional hubs.</p>
-        <a href="services.html" class="cta-link">Learn more <i class="fas fa-arrow-right"></i></a>
-      </div>
-      <!-- Card 5 -->
-      <div class="service-card fade-in delay-200">
-        <div class="card-icon card-icon-accent"><i class="fas fa-truck-ramp-box"></i></div>
-        <h4>Freight Solutions</h4>
-        <p>LTL, FTL and over-dimensional freight managed by our specialist team with real-time load tracking.</p>
-        <a href="services.html" class="cta-link">Learn more <i class="fas fa-arrow-right"></i></a>
-      </div>
-      <!-- Card 6 -->
-      <div class="service-card fade-in delay-300">
-        <div class="card-icon card-icon-primary"><i class="fas fa-shield-halved"></i></div>
-        <h4>Insured Packages</h4>
-        <p>Protect high-value shipments with comprehensive cargo insurance and priority claims processing.</p>
-        <a href="services.html" class="cta-link">Learn more <i class="fas fa-arrow-right"></i></a>
+      <div class="grid-3" style="align-items:stretch;">
+        <!-- Card 1 -->
+        <div class="service-card fade-in delay-100">
+          <div class="service-card-img">
+            <img src="https://images.unsplash.com/photo-1620455800201-7f00aeef12ed?w=800&auto=format&q=80"
+              alt="Express Delivery" />
+          </div>
+          <div class="card-content">
+            <div class="card-icon card-icon-accent"><i class="fas fa-bolt"></i></div>
+            <h4>Express Delivery</h4>
+            <p>Same-day and next-day delivery to major city destinations. Priority handling throughout the journey.</p>
+            <a href="services.html" class="cta-link">Learn more <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="service-card fade-in delay-200">
+          <div class="service-card-img">
+            <img src="https://images.unsplash.com/photo-1606185540834-d6e7483ee1a4?w=800&auto=format&q=80"
+              alt="International Shipping">
+          </div>
+          <div class="card-content">
+            <div class="card-icon card-icon-primary"><i class="fas fa-globe-americas"></i></div>
+            <h4>International Shipping</h4>
+            <p>Worldwide freight solutions covering 200+ countries with full customs brokerage and documentation
+              support.</p>
+            <a href="services.html" class="cta-link">Learn more <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="service-card fade-in delay-300">
+          <div class="service-card-img">
+            <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&auto=format&q=80"
+              alt="Cold Chain Logistics">
+          </div>
+          <div class="card-content">
+            <div class="card-icon card-icon-teal"><i class="fas fa-snowflake"></i></div>
+            <h4>Cold Chain Logistics</h4>
+            <p>Temperature-controlled shipping for pharmaceuticals, food & perishable goods with unbroken cold chain
+              monitoring.</p>
+            <a href="services.html" class="cta-link">Learn more <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <!-- Card 4 -->
+        <div class="service-card fade-in delay-100">
+          <div class="service-card-img">
+            <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&auto=format&q=80"
+              alt="Warehousing" />
+          </div>
+          <div class="card-content">
+            <div class="card-icon card-icon-success"><i class="fas fa-boxes-stacked"></i></div>
+            <h4>Warehousing & Fulfilment</h4>
+            <p>End-to-end e-commerce logistics with pick, pack, storage, and distribution across regional hubs.</p>
+            <a href="services.html" class="cta-link">Learn more <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <!-- Card 5 -->
+        <div class="service-card fade-in delay-200">
+          <div class="service-card-img">
+            <img src="https://images.unsplash.com/photo-1682636150538-1180181f9fa6?w=800&auto=format&q=80"
+              alt="Freight Solutions">
+          </div>
+          <div class="card-content">
+            <div class="card-icon card-icon-accent"><i class="fas fa-truck-ramp-box"></i></div>
+            <h4>Freight Solutions</h4>
+            <p>LTL, FTL and over-dimensional freight managed by our specialist team with real-time load tracking.</p>
+            <a href="services.html" class="cta-link">Learn more <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <!-- Card 6 -->
+        <div class="service-card fade-in delay-300">
+          <div class="service-card-img">
+            <img src="https://images.unsplash.com/photo-1623123096602-35c9aabf9407?w=800&auto=format&q=80"
+              alt="Insured Packages" />
+          </div>
+          <div class="card-content">
+            <div class="card-icon card-icon-primary"><i class="fas fa-shield-halved"></i></div>
+            <h4>Insured Packages</h4>
+            <p>Protect high-value shipments with comprehensive cargo insurance and priority claims processing.</p>
+            <a href="services.html" class="cta-link">Learn more <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ═══════════════════════════════════════════════════════
+  <!-- ═══════════════════════════════════════════════════════
      HOW IT WORKS
 ════════════════════════════════════════════════════════ -->
-<section class="section how-it-works bg-light">
-  <div class="container">
-    <div class="section-header-center fade-in" style="margin-bottom:64px;">
-      <span class="section-label">Simple Process</span>
-      <h2 class="section-title">Your Package Delivered in 4 Easy Steps</h2>
-    </div>
+  <section class="section how-it-works bg-light">
+    <div class="container">
+      <div class="section-header-center fade-in" style="margin-bottom:64px;">
+        <span class="section-label">Simple Process</span>
+        <h2 class="section-title">Your Package Delivered in 4 Easy Steps</h2>
+      </div>
 
-    <div class="grid-4 steps-wrapper">
-      <div class="step-item text-center fade-in delay-100">
-        <div class="step-number">01</div>
-        <div class="step-icon-wrap"><i class="fas fa-box-open"></i></div>
-        <h5 style="margin-bottom:8px;">Book a Shipment</h5>
-        <p style="font-size:.9rem;color:var(--clr-gray-600);">Fill in sender, receiver, and package details in under 2 minutes online.</p>
-      </div>
-      <div class="step-item text-center fade-in delay-200">
-        <div class="step-number">02</div>
-        <div class="step-icon-wrap"><i class="fas fa-qrcode"></i></div>
-        <h5 style="margin-bottom:8px;">Get Label & ID</h5>
-        <p style="font-size:.9rem;color:var(--clr-gray-600);">Receive your prepaid shipping label and unique tracking number instantly.</p>
-      </div>
-      <div class="step-item text-center fade-in delay-300">
-        <div class="step-number">03</div>
-        <div class="step-icon-wrap"><i class="fas fa-hand-holding"></i></div>
-        <h5 style="margin-bottom:8px;">Package Collected</h5>
-        <p style="font-size:.9rem;color:var(--clr-gray-600);">Our courier picks up from your doorstep or chosen drop-off point.</p>
-      </div>
-      <div class="step-item text-center fade-in delay-400">
-        <div class="step-number">04</div>
-        <div class="step-icon-wrap"><i class="fas fa-house-circle-check"></i></div>
-        <h5 style="margin-bottom:8px;color:var(--clr-primary);">Delivered!</h5>
-        <p class="section-desc" style="font-size:.9rem;">Package safely delivered with confirmation photo and e-signature.</p>
+      <div class="grid-4 steps-wrapper">
+        <div class="step-item text-center fade-in delay-100">
+          <div class="step-number">01</div>
+          <div class="step-icon-wrap"><i class="fas fa-box-open"></i></div>
+          <h5 style="margin-bottom:8px;">Book a Shipment</h5>
+          <p style="font-size:.9rem;color:var(--clr-gray-600);">Fill in sender, receiver, and package details in under 2
+            minutes online.</p>
+        </div>
+        <div class="step-item text-center fade-in delay-200">
+          <div class="step-number">02</div>
+          <div class="step-icon-wrap"><i class="fas fa-qrcode"></i></div>
+          <h5 style="margin-bottom:8px;">Get Label & ID</h5>
+          <p style="font-size:.9rem;color:var(--clr-gray-600);">Receive your prepaid shipping label and unique tracking
+            number instantly.</p>
+        </div>
+        <div class="step-item text-center fade-in delay-300">
+          <div class="step-number">03</div>
+          <div class="step-icon-wrap"><i class="fas fa-hand-holding"></i></div>
+          <h5 style="margin-bottom:8px;">Package Collected</h5>
+          <p style="font-size:.9rem;color:var(--clr-gray-600);">Our courier picks up from your doorstep or chosen
+            drop-off point.</p>
+        </div>
+        <div class="step-item text-center fade-in delay-400">
+          <div class="step-number">04</div>
+          <div class="step-icon-wrap"><i class="fas fa-house-circle-check"></i></div>
+          <h5 style="margin-bottom:8px;color:var(--clr-primary);">Delivered!</h5>
+          <p class="section-desc" style="font-size:.9rem;">Package safely delivered with confirmation photo and
+            e-signature.</p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ═══════════════════════════════════════════════════════
+  <!-- ═══════════════════════════════════════════════════════
      COVERAGE / WHY US
 ════════════════════════════════════════════════════════ -->
-<section class="section coverage-section">
-  <div class="container">
-    <div class="coverage-grid">
+  <section class="section coverage-section">
+    <div class="container">
+      <div class="coverage-grid">
 
-      <!-- Left visual -->
-      <div class="fade-in-left" style="position:relative;">
-        <div style="border-radius:var(--radius-xl);overflow:hidden;box-shadow:var(--shadow-lg);">
-          <img src="https://images.unsplash.com/photo-1580752300992-559f8e0734e0?w=700&auto=format&q=80" alt="Global coverage map" style="width:100%;height:440px;object-fit:cover;" />
+        <!-- Left visual -->
+        <div class="fade-in-left" style="position:relative;">
+          <div style="border-radius:var(--radius-xl);overflow:hidden;box-shadow:var(--shadow-lg);">
+            <img src="https://images.unsplash.com/photo-1580752300992-559f8e0734e0?w=700&auto=format&q=80"
+              alt="Global coverage map" style="width:100%;height:440px;object-fit:cover;" />
+          </div>
+          <!-- Overlay badge -->
+          <div
+            style="position:absolute;bottom:24px;right:24px;background:var(--clr-bg-card);border:1px solid var(--clr-border);border-radius:var(--radius-lg);padding:16px 24px;box-shadow:var(--shadow-lg);text-align:center;">
+            <div style="font-family:var(--font-heading);font-size:2rem;font-weight:900;color:var(--clr-accent);">200+
+            </div>
+            <div style="font-size:.8rem;color:var(--clr-gray-600);font-weight:600;">Countries Served</div>
+          </div>
         </div>
-        <!-- Overlay badge -->
-        <div style="position:absolute;bottom:24px;right:24px;background:var(--clr-bg-card);border:1px solid var(--clr-border);border-radius:var(--radius-lg);padding:16px 24px;box-shadow:var(--shadow-lg);text-align:center;">
-          <div style="font-family:var(--font-heading);font-size:2rem;font-weight:900;color:var(--clr-accent);">200+</div>
-          <div style="font-size:.8rem;color:var(--clr-gray-600);font-weight:600;">Countries Served</div>
-        </div>
-      </div>
 
-      <!-- Right text -->
-      <div class="fade-in-right">
-        <span class="section-label">Global Network</span>
-        <h2 class="section-title">Reaching Every Corner of the World</h2>
-        <p class="section-desc" style="margin-bottom:32px;">Zenith's logistics network spans all major continents with strategically placed hubs ensuring the fastest route and lowest transit time for every shipment.</p>
+        <!-- Right text -->
+        <div class="fade-in-right">
+          <span class="section-label">Global Network</span>
+          <h2 class="section-title">Reaching Every Corner of the World</h2>
+          <p class="section-desc" style="margin-bottom:32px;">Zenith's logistics network spans all major continents with
+            strategically placed hubs ensuring the fastest route and lowest transit time for every shipment.</p>
 
           <div style="display:flex;gap:16px;align-items:flex-start;">
-            <div style="width:44px;height:44px;border-radius:var(--radius-md);background:var(--clr-bg-alt);color:var(--clr-accent);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;border:1px solid var(--clr-border);"><i class="fas fa-route"></i></div>
-            <div><h5 style="margin-bottom:4px;color:var(--clr-primary);">Smart Route Optimisation</h5><p class="section-desc" style="font-size:.9rem;">AI-powered route planning reduces delivery time by up to 40%.</p></div>
+            <div
+              style="width:44px;height:44px;border-radius:var(--radius-md);background:var(--clr-bg-alt);color:var(--clr-accent);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;border:1px solid var(--clr-border);">
+              <i class="fas fa-route"></i></div>
+            <div>
+              <h5 style="margin-bottom:4px;color:var(--clr-primary);">Smart Route Optimisation</h5>
+              <p class="section-desc" style="font-size:.9rem;">AI-powered route planning reduces delivery time by up to
+                40%.</p>
+            </div>
           </div>
           <div style="display:flex;gap:16px;align-items:flex-start;">
-            <div style="width:44px;height:44px;border-radius:var(--radius-md);background:var(--clr-bg-alt);color:var(--clr-teal);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;border:1px solid var(--clr-border);"><i class="fas fa-satellite-dish"></i></div>
-            <div><h5 style="margin-bottom:4px;color:var(--clr-primary);">Real-time GPS Tracking</h5><p class="section-desc" style="font-size:.9rem;">Live location updates every 60 seconds from pick-up to delivery.</p></div>
+            <div
+              style="width:44px;height:44px;border-radius:var(--radius-md);background:var(--clr-bg-alt);color:var(--clr-teal);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;border:1px solid var(--clr-border);">
+              <i class="fas fa-satellite-dish"></i></div>
+            <div>
+              <h5 style="margin-bottom:4px;color:var(--clr-primary);">Real-time GPS Tracking</h5>
+              <p class="section-desc" style="font-size:.9rem;">Live location updates every 60 seconds from pick-up to
+                delivery.</p>
+            </div>
           </div>
           <div style="display:flex;gap:16px;align-items:flex-start;">
-            <div style="width:44px;height:44px;border-radius:var(--radius-md);background:var(--clr-bg-alt);color:var(--clr-success);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;border:1px solid var(--clr-border);"><i class="fas fa-headset"></i></div>
-            <div><h5 style="margin-bottom:4px;color:var(--clr-primary);">24/7 Support</h5><p class="section-desc" style="font-size:.9rem;">Round-the-clock customer service via chat, phone, and email.</p></div>
+            <div
+              style="width:44px;height:44px;border-radius:var(--radius-md);background:var(--clr-bg-alt);color:var(--clr-success);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;border:1px solid var(--clr-border);">
+              <i class="fas fa-headset"></i></div>
+            <div>
+              <h5 style="margin-bottom:4px;color:var(--clr-primary);">24/7 Support</h5>
+              <p class="section-desc" style="font-size:.9rem;">Round-the-clock customer service via chat, phone, and
+                email.</p>
+            </div>
+          </div>
+
+          <div style="margin-top:36px;display:flex;gap:16px;flex-wrap:wrap;">
+            <a href="services.html" class="btn btn-primary">Explore Services</a>
+            <a href="contact.html" class="btn btn-outline-primary">Get a Quote</a>
+          </div>
         </div>
 
-        <div style="margin-top:36px;display:flex;gap:16px;flex-wrap:wrap;">
-          <a href="services.html" class="btn btn-primary">Explore Services</a>
-          <a href="contact.html"  class="btn btn-outline-primary">Get a Quote</a>
-        </div>
       </div>
-
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ═══════════════════════════════════════════════════════
+  <!-- ═══════════════════════════════════════════════════════
      STATISTICS COUNTER
 ════════════════════════════════════════════════════════ -->
-<section class="section-sm stats-section">
-  <div class="container" style="position:relative;z-index:1;">
-    <div class="grid-4" style="gap:20px;">
-      <div class="stat-card-dark fade-in delay-100">
-        <div class="stat-num"><span class="counter" data-count="12400000">0</span></div>
-        <div class="stat-lbl">Packages Delivered</div>
-      </div>
-      <div class="stat-card-dark fade-in delay-200">
-        <div class="stat-num"><span class="counter" data-count="180">0</span><span style="color:var(--clr-accent);">+</span></div>
-        <div class="stat-lbl">Cities Covered</div>
-      </div>
-      <div class="stat-card-dark fade-in delay-300">
-        <div class="stat-num"><span class="counter" data-count="45000">0</span><span style="color:var(--clr-accent);">+</span></div>
-        <div class="stat-lbl">Happy Clients</div>
-      </div>
-      <div class="stat-card-dark fade-in delay-400">
-        <div class="stat-num"><span class="counter" data-count="98">0</span><span style="color:var(--clr-accent);">%</span></div>
-        <div class="stat-lbl">On-Time Rate</div>
+  <section class="section-sm stats-section">
+    <div class="container" style="position:relative;z-index:1;">
+      <div class="grid-4" style="gap:20px;">
+        <div class="stat-card-dark fade-in delay-100">
+          <div class="stat-num"><span class="counter" data-count="12400000">0</span></div>
+          <div class="stat-lbl">Packages Delivered</div>
+        </div>
+        <div class="stat-card-dark fade-in delay-200">
+          <div class="stat-num"><span class="counter" data-count="180">0</span><span
+              style="color:var(--clr-accent);">+</span></div>
+          <div class="stat-lbl">Cities Covered</div>
+        </div>
+        <div class="stat-card-dark fade-in delay-300">
+          <div class="stat-num"><span class="counter" data-count="45000">0</span><span
+              style="color:var(--clr-accent);">+</span></div>
+          <div class="stat-lbl">Happy Clients</div>
+        </div>
+        <div class="stat-card-dark fade-in delay-400">
+          <div class="stat-num"><span class="counter" data-count="98">0</span><span
+              style="color:var(--clr-accent);">%</span></div>
+          <div class="stat-lbl">On-Time Rate</div>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ═══════════════════════════════════════════════════════
+  <!-- ═══════════════════════════════════════════════════════
      TESTIMONIALS
 ════════════════════════════════════════════════════════ -->
-<section class="section testimonials-section">
-  <div class="container">
-    <div class="section-header-center fade-in" style="margin-bottom:56px;">
-      <span class="section-label">Client Stories</span>
-      <h2 class="section-title">What Our Customers Say</h2>
-    </div>
+  <section class="section testimonials-section">
+    <div class="container">
+      <div class="section-header-center fade-in" style="margin-bottom:56px;">
+        <span class="section-label">Client Stories</span>
+        <h2 class="section-title">What Our Customers Say</h2>
+      </div>
 
-    <div class="grid-3" style="align-items:stretch;">
-      <div class="testimonial-card fade-in delay-100">
-        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-        <p class="testimonial-text">"Zenith transformed our e-commerce fulfilment. Delivery times dropped by 35% and our customer satisfaction scores hit an all-time high. Absolutely outstanding!"</p>
-        <div class="testimonial-author">
-          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah M." class="author-avatar" />
-          <div>
-            <div class="author-name">Sarah Mitchell</div>
-            <div class="author-role">COO, BrightMart Retail</div>
+      <div class="grid-3" style="align-items:stretch;">
+        <div class="testimonial-card fade-in delay-100">
+          <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+              class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <p class="testimonial-text">"Zenith transformed our e-commerce fulfilment. Delivery times dropped by 35% and
+            our customer satisfaction scores hit an all-time high. Absolutely outstanding!"</p>
+          <div class="testimonial-author">
+            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah M." class="author-avatar" />
+            <div>
+              <div class="author-name">Sarah Mitchell</div>
+              <div class="author-role">COO, BrightMart Retail</div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="testimonial-card fade-in delay-200">
-        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-        <p class="testimonial-text">"The real-time tracking feature is exceptional. Our clients can monitor their shipments at every checkpoint — it's built enormous trust in our supply chain."</p>
-        <div class="testimonial-author">
-          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="James K." class="author-avatar" />
-          <div>
-            <div class="author-name">James Kowalski</div>
-            <div class="author-role">Logistics Manager, TechFlow</div>
+        <div class="testimonial-card fade-in delay-200">
+          <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+              class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <p class="testimonial-text">"The real-time tracking feature is exceptional. Our clients can monitor their
+            shipments at every checkpoint — it's built enormous trust in our supply chain."</p>
+          <div class="testimonial-author">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="James K." class="author-avatar" />
+            <div>
+              <div class="author-name">James Kowalski</div>
+              <div class="author-role">Logistics Manager, TechFlow</div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="testimonial-card fade-in delay-300">
-        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-stroke"></i></div>
-        <p class="testimonial-text">"We switched to Zenith for our international shipments and haven't looked back. Competitive rates, professional handling, and zero lost packages in 18 months!"</p>
-        <div class="testimonial-author">
-          <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Priya S." class="author-avatar" />
-          <div>
-            <div class="author-name">Priya Sharma</div>
-            <div class="author-role">Founder, Artisan Exports</div>
+        <div class="testimonial-card fade-in delay-300">
+          <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+              class="fas fa-star"></i><i class="fas fa-star-half-stroke"></i></div>
+          <p class="testimonial-text">"We switched to Zenith for our international shipments and haven't looked back.
+            Competitive rates, professional handling, and zero lost packages in 18 months!"</p>
+          <div class="testimonial-author">
+            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Priya S." class="author-avatar" />
+            <div>
+              <div class="author-name">Priya Sharma</div>
+              <div class="author-role">Founder, Artisan Exports</div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ═══════════════════════════════════════════════════════
+  <!-- ═══════════════════════════════════════════════════════
      CTA SECTION
 ════════════════════════════════════════════════════════ -->
-<section class="section-sm cta-section">
-  <div class="container">
-    <div class="cta-inner">
-      <div>
-        <span class="section-label" style="color:rgba(255,255,255,.75);">Ready to Ship?</span>
-        <h2 style="color:var(--clr-white);margin-bottom:12px;">Start Delivering Today — <span style="opacity:.85;">No Setup Fee</span></h2>
-        <p style="color:rgba(255,255,255,.8);font-size:1.0625rem;">Create your free account and ship your first package in minutes.</p>
-      </div>
-      <div class="cta-btns">
-        <a href="signup.html" class="btn btn-white btn-lg">Get Started Free</a>
-        <a href="contact.html" class="btn btn-outline btn-lg">Contact Sales</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════
-     FOOTER
-════════════════════════════════════════════════════════ -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer-top">
-      <!-- Brand -->
-      <div>
-        <a href="index.html" class="nav-brand footer-brand">
-          <div class="nav-brand-icon"><i class="fas fa-paper-plane"></i></div>
-          Zenith
-        </a>
-        <p class="footer-desc">Your trusted partner for fast, reliable courier and delivery services across the globe. Delivering smiles since 2010.</p>
-        <div class="footer-socials">
-          <a href="#" class="social-btn" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" class="social-btn" aria-label="Twitter/X"><i class="fab fa-x-twitter"></i></a>
-          <a href="#" class="social-btn" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="#" class="social-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+  <section class="section-sm cta-section">
+    <div class="container">
+      <div class="cta-inner">
+        <div>
+          <span class="section-label" style="color:rgba(255,255,255,.75);">Ready to Ship?</span>
+          <h2 style="color:var(--clr-white);margin-bottom:12px;">Start Delivering Today — <span style="opacity:.85;">No
+              Setup Fee</span></h2>
+          <p style="color:rgba(255,255,255,.8);font-size:1.0625rem;">Create your free account and ship your first
+            package in minutes.</p>
+        </div>
+        <div class="cta-btns">
+          <a href="signup.html" class="btn btn-white btn-lg">Get Started Free</a>
+          <a href="contact.html" class="btn btn-outline btn-lg">Contact Sales</a>
         </div>
       </div>
-      <!-- Services -->
-      <div>
-        <h6 class="footer-col-title">Services</h6>
-        <ul class="footer-links">
-          <li><a href="services.html" class="footer-link"><i class="fas fa-chevron-right"></i> Express Delivery</a></li>
-          <li><a href="services.html" class="footer-link"><i class="fas fa-chevron-right"></i> International Shipping</a></li>
-          <li><a href="services.html" class="footer-link"><i class="fas fa-chevron-right"></i> Cold Chain Logistics</a></li>
-          <li><a href="services.html" class="footer-link"><i class="fas fa-chevron-right"></i> Freight Solutions</a></li>
-          <li><a href="services.html" class="footer-link"><i class="fas fa-chevron-right"></i> Warehousing</a></li>
-        </ul>
-      </div>
-      <!-- Company -->
-      <div>
-        <h6 class="footer-col-title">Company</h6>
-        <ul class="footer-links">
-          <li><a href="about.html"   class="footer-link"><i class="fas fa-chevron-right"></i> About Us</a></li>
-          <li><a href="#"            class="footer-link"><i class="fas fa-chevron-right"></i> Careers</a></li>
-          <li><a href="#"            class="footer-link"><i class="fas fa-chevron-right"></i> Press Room</a></li>
-          <li><a href="#"            class="footer-link"><i class="fas fa-chevron-right"></i> Partnerships</a></li>
-          <li><a href="contact.html" class="footer-link"><i class="fas fa-chevron-right"></i> Contact</a></li>
-        </ul>
-      </div>
-      <!-- Contact -->
-      <div>
-        <h6 class="footer-col-title">Contact Us</h6>
-        <ul class="footer-links">
-          <li class="footer-link" style="cursor:default;"><i class="fas fa-map-marker-alt" style="color:var(--clr-accent);width:16px;"></i> 420 Logistics Blvd, New York, NY</li>
-          <li><a href="tel:+18005557890" class="footer-link"><i class="fas fa-phone" style="color:var(--clr-accent);width:16px;"></i> +1 800 555 7890</a></li>
-          <li><a href="mailto:support@zenith.com" class="footer-link"><i class="fas fa-envelope" style="color:var(--clr-accent);width:16px;"></i> support@zenith.com</a></li>
-        </ul>
-        <!-- Newsletter -->
-        <div style="margin-top:20px;">
-          <div style="font-size:.8rem;color:rgba(255,255,255,.4);margin-bottom:8px;font-weight:600;text-transform:uppercase;letter-spacing:.07em;">Newsletter</div>
-          <div style="display:flex;gap:0;">
-            <input type="email" placeholder="Your email" style="flex:1;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:var(--radius-md) 0 0 var(--radius-md);padding:10px 14px;color:var(--clr-white);font-size:.875rem;outline:none;" />
-            <button style="background:var(--clr-accent);border:none;border-radius:0 var(--radius-md) var(--radius-md) 0;padding:10px 16px;color:var(--clr-white);cursor:pointer;"><i class="fas fa-paper-plane"></i></button>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <!-- Brand -->
+        <div>
+          <a href="index.html" class="nav-brand footer-brand">
+            <div class="nav-brand-icon"><i class="fas fa-paper-plane"></i></div>
+            Zenith
+          </a>
+          <p class="footer-desc">Your trusted partner for fast, reliable courier and delivery services across the globe.
+            Delivering smiles since 2010.</p>
+          <div class="footer-socials">
+            <a href="#" class="social-btn" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-btn" aria-label="Twitter/X"><i class="fab fa-x-twitter"></i></a>
+            <a href="#" class="social-btn" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <!-- Services -->
+        <div>
+          <h6 class="footer-col-title">Services</h6>
+          <ul class="footer-links">
+            <li><a href="services.html" class="footer-link"><i class="fas fa-chevron-right"></i> Express Delivery</a>
+            </li>
+            <li><a href="services.html" class="footer-link"><i class="fas fa-chevron-right"></i> International
+                Shipping</a></li>
+            <li><a href="services.html" class="footer-link"><i class="fas fa-chevron-right"></i> Cold Chain
+                Logistics</a></li>
+            <li><a href="services.html" class="footer-link"><i class="fas fa-chevron-right"></i> Freight Solutions</a>
+            </li>
+            <li><a href="services.html" class="footer-link"><i class="fas fa-chevron-right"></i> Warehousing</a></li>
+          </ul>
+        </div>
+        <!-- Company -->
+        <div>
+          <h6 class="footer-col-title">Company</h6>
+          <ul class="footer-links">
+            <li><a href="about.html" class="footer-link"><i class="fas fa-chevron-right"></i> About Us</a></li>
+            <li><a href="#" class="footer-link"><i class="fas fa-chevron-right"></i> Careers</a></li>
+            <li><a href="#" class="footer-link"><i class="fas fa-chevron-right"></i> Press Room</a></li>
+            <li><a href="#" class="footer-link"><i class="fas fa-chevron-right"></i> Partnerships</a></li>
+            <li><a href="contact.html" class="footer-link"><i class="fas fa-chevron-right"></i> Contact</a></li>
+          </ul>
+        </div>
+        <!-- Contact -->
+        <div>
+          <h6 class="footer-col-title">Contact Us</h6>
+          <ul class="footer-links">
+            <li class="footer-link" style="cursor:default;"><i class="fas fa-map-marker-alt"
+                style="color:var(--clr-accent);width:16px;"></i> 420 Logistics Blvd, New York, NY</li>
+            <li><a href="tel:+18005557890" class="footer-link"><i class="fas fa-phone"
+                  style="color:var(--clr-accent);width:16px;"></i> +1 800 555 7890</a></li>
+            <li><a href="mailto:support@zenith.com" class="footer-link"><i class="fas fa-envelope"
+                  style="color:var(--clr-accent);width:16px;"></i> support@zenith.com</a></li>
+          </ul>
+          <!-- Newsletter -->
+          <div style="margin-top:20px;">
+            <div
+              style="font-size:.8rem;color:rgba(255,255,255,.4);margin-bottom:8px;font-weight:600;text-transform:uppercase;letter-spacing:.07em;">
+              Newsletter</div>
+            <div style="display:flex;gap:0;">
+              <input type="email" placeholder="Your email"
+                style="flex:1;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:var(--radius-md) 0 0 var(--radius-md);padding:10px 14px;color:var(--clr-white);font-size:.875rem;outline:none;" />
+              <button
+                style="background:var(--clr-accent);border:none;border-radius:0 var(--radius-md) var(--radius-md) 0;padding:10px 16px;color:var(--clr-white);cursor:pointer;"><i
+                  class="fas fa-paper-plane"></i></button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- Footer Bottom -->
-    <div class="footer-bottom">
-      <p class="footer-copy">© 2026 Zenith. All rights reserved.</p>
-      <div class="footer-bottom-links">
-        <a href="#" class="footer-bottom-link">Privacy Policy</a>
-        <a href="#" class="footer-bottom-link">Terms of Service</a>
-        <a href="#" class="footer-bottom-link">Cookie Policy</a>
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 Zenith. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#" class="footer-bottom-link">Privacy Policy</a>
+          <a href="#" class="footer-bottom-link">Terms of Service</a>
+          <a href="#" class="footer-bottom-link">Cookie Policy</a>
+        </div>
       </div>
     </div>
-  </div>
-</footer>
+  </footer>
 
-<!-- Scripts -->
-<script src="js/main.js"></script>
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
 </body>
+
 </html>

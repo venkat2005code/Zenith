@@ -807,7 +807,8 @@ select.form-control {
   left: auto;
 }
 
-.nav-item:hover .dropdown-menu {
+.nav-item:hover .dropdown-menu,
+.nav-item.dropdown-open .dropdown-menu {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
@@ -838,7 +839,7 @@ select.form-control {
 .nav-actions {
   display: flex;
   align-items: center;
-  gap: 16px; /* Increased from 12px for better spacing between RTL and Hamburger */
+  gap: 12px;
   flex-shrink: 0;
 }
 
@@ -846,15 +847,17 @@ select.form-control {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
+  gap: 8px;
   height: 40px;
-  padding: 0;
-  border-radius: 50%;
+  padding: 0 12px;
+  border-radius: var(--radius-sm);
   border: 1.5px solid var(--clr-gray-200);
-  color: var(--clr-primary); /* Darkened for better contrast in light mode */
+  color: var(--clr-primary);
   cursor: pointer;
   transition: all var(--trans-fast);
   background: var(--clr-white);
+  font-size: 0.8125rem;
+  font-weight: 600;
 }
 
 [data-theme="dark"] .rtl-toggle {
@@ -863,14 +866,14 @@ select.form-control {
   color: var(--clr-white);
 }
 
-.rtl-toggle .dir-label,
-.rtl-toggle span:not(.fas) {
-  display: none !important;
+.rtl-toggle span {
+  display: inline-block;
 }
 
 .rtl-toggle:hover {
   border-color: var(--clr-accent);
   color: var(--clr-accent);
+  background: rgba(59, 130, 246, 0.05);
 }
 
 /* Hamburger */
@@ -1266,26 +1269,55 @@ select.form-control {
 .service-card {
   background: var(--clr-bg-card);
   border-radius: var(--radius-lg);
-  padding: 32px 28px;
+  padding: 0;
   display: flex;
   flex-direction: column;
   border: 1px solid var(--clr-border);
   transition: all var(--trans-base);
   box-shadow: var(--shadow-sm);
   height: 100%;
+  overflow: hidden;
 }
 
 .service-card:hover {
   border-color: var(--clr-accent);
-  transform: translateY(-6px) scale(1.02);
+  transform: translateY(-6px) scale(1.01);
   box-shadow: var(--shadow-xl);
 }
 
+.service-card-img {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+}
+
+.service-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--trans-slow);
+}
+
+.service-card:hover .service-card-img img {
+  transform: scale(1.1);
+}
+
+.service-card .card-content {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
 .service-card .card-icon {
-  font-size: 2rem;
-  width: 64px;
-  height: 64px;
-  border-radius: 16px;
+  font-size: 1.5rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .service-card h4 {
@@ -1857,11 +1889,21 @@ select.form-control {
   z-index: 0;
 }
 
-.page-hero-content {
-  position: relative;
-  z-index: 1;
-  max-width: 800px;
-  margin: 0 auto;
+.page-hero.about-hero::before {
+  display: none !important;
+}
+
+.page-hero.about-hero {
+  padding-top: calc(var(--nav-h) + 240px);
+  padding-bottom: 240px;
+  background-color: var(--clr-bg-alt); /* Light background fallback */
+}
+
+.about-hero h1, 
+.about-hero p,
+.about-hero .breadcrumb-current,
+.about-hero .about-hero-stats div div {
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5), 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .page-hero-2col {
@@ -1948,14 +1990,41 @@ select.form-control {
   background: var(--clr-bg-main);
 }
 
-.tracking-input-card {
+.tracking-input.service-card {
   background: var(--clr-bg-card);
   border: 1px solid var(--clr-border);
-  border-radius: var(--radius-xl);
-  padding: 48px;
-  box-shadow: var(--shadow-lg);
-  max-width: 680px;
-  margin: 0 auto 48px;
+  border-radius: var(--radius-lg);
+  padding: 0;
+  transition: all var(--trans-base);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+.service-card-img {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.service-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--trans-slow);
+}
+
+.service-card:hover .service-card-img img {
+  transform: scale(1.1);
+}
+
+.service-card .card-content {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex-grow: 1;
 }
 
 .tracking-input-row {
@@ -2968,7 +3037,49 @@ select.form-control {
 }
 
 /* ── 27. RESPONSIVE BREAKPOINTS ─────────────────────────── */
-@media (max-width: 1024px) {
+
+/* ── Tablet Nav (769px – 991px) ─────────────────────────── */
+@media (max-width: 991px) {
+  /* Collapse nav menu into hamburger */
+  .nav-menu {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex !important;
+  }
+
+  .nav-mobile {
+    display: block;
+  }
+
+  /* Keep Login/Sign Up visible at tablet — just smaller */
+  .nav-actions {
+    margin-left: auto;
+    gap: 12px;
+  }
+
+  .nav-actions .btn-sm {
+    padding: 8px 14px;
+    font-size: 0.8125rem;
+  }
+
+  /* Shrink RTL toggle label at tablet */
+  .rtl-toggle span {
+    display: none;
+  }
+
+  .rtl-toggle {
+    padding: 0 10px;
+    min-width: 36px;
+    justify-content: center;
+  }
+
+  .nav-inner {
+    gap: 12px;
+  }
+
+  /* Layout grids */
   .grid-4 {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -3013,7 +3124,7 @@ select.form-control {
     --nav-h: 64px;
   }
 
-  .nav-menu,
+  /* At 768px hide CTAs too — they go into the mobile nav */
   .nav-actions .btn-primary,
   .nav-actions .btn-outline-primary,
   .nav-actions .btn-secondary {
@@ -3644,4 +3755,137 @@ body {
   color: #FFB38A;
   background: rgba(249, 115, 22, 0.15) !important;
   border-color: rgba(249, 115, 22, 0.3) !important;
+}
+
+/* ── 1024px Nav Alignment & spacing ── */
+@media (min-width: 992px) and (max-width: 1200px) {
+  .nav-inner {
+    gap: 16px !important;
+  }
+  .nav-menu {
+    gap: 4px !important;
+  }
+  .nav-link {
+    padding: 8px 10px !important;
+    font-size: 0.85rem !important;
+  }
+  .nav-actions {
+    gap: 8px !important;
+    margin-left: auto !important;
+  }
+}
+
+/* ── 19.2 ABOUT HERO RECONSTRUCTED (V2) ─────────────────── */
+.about-v2-hero {
+  position: relative;
+  min-height: 100vh;
+  padding-top: calc(var(--nav-h) + 100px);
+  padding-bottom: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--clr-white);
+  overflow: hidden;
+  background: url('https://images.unsplash.com/photo-1583686298564-46fbffda0707?w=1600&auto=format&q=80') center/cover no-repeat;
+}
+
+.about-v2-hero .hero-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(11, 19, 43, 0.9) 0%, rgba(15, 23, 42, 0.8) 50%, rgba(59, 130, 246, 0.4) 100%);
+  z-index: 0;
+}
+
+.about-v2-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+}
+
+.about-v2-hero h1 {
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 24px;
+  color: var(--clr-white);
+}
+
+.about-v2-hero p {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 700px;
+  margin: 0 auto 48px;
+  line-height: 1.6;
+}
+
+.about-v2-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 60px;
+}
+
+.stat-glass-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-lg);
+  padding: 32px 24px;
+  transition: all var(--trans-base);
+}
+
+.stat-glass-card:hover {
+  transform: translateY(-10px);
+  background: rgba(255, 255, 255, 0.12);
+  border-color: var(--clr-accent);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.stat-val {
+  font-family: var(--font-heading);
+  font-size: 2.75rem;
+  font-weight: 900;
+  color: var(--clr-white);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.stat-label {
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--clr-accent);
+  margin-bottom: 4px;
+}
+
+.stat-desc {
+  font-size: 0.8125rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.about-v2-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .about-v2-stats {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .about-v2-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  .about-v2-actions .btn {
+    width: 100%;
+  }
+  .about-v2-hero h1 {
+    font-size: 2.5rem;
+  }
 }
