@@ -25,20 +25,20 @@
   --clr-bg-card: #FFFFFF;
   --clr-bg-nav: rgba(255, 255, 255, 0.85);
   
-  --clr-gray-50: #F0F3F9;
-  --clr-gray-100: #E2E8F0;
-  --clr-gray-200: #CBD5E1;
-  --clr-gray-300: #B2BDCD;
+  --clr-gray-50: #F8FAFC;
+  --clr-gray-100: #F1F5F9;
+  --clr-gray-200: #E2E8F0;
+  --clr-gray-300: #CBD5E1;
   --clr-gray-400: #94A3B8;
   --clr-gray-500: #64748B;
   --clr-gray-600: #475569;
   --clr-gray-700: #334155;
   --clr-gray-800: #1E293B;
   --clr-gray-900: #0F172A;
-  --clr-dark: #0B132B;
+  --clr-dark: #0F172A;
   
-  --clr-border: rgba(11, 19, 43, 0.08); /* Increased for better contrast */
-  --clr-border-strong: rgba(11, 19, 43, 0.15);
+  --clr-border: rgba(15, 23, 42, 0.12); /* Slightly darker for better clarity */
+  --clr-border-strong: rgba(15, 23, 42, 0.2);
 
   /* Typography */
   --font-body: 'Inter', sans-serif;
@@ -264,7 +264,7 @@ h6 {
 }
 
 .text-muted {
-  color: var(--clr-gray-500) !important; /* Standardized for better contrast */
+  color: var(--clr-gray-600) !important; /* Increased contrast for readability */
 }
 
 .section-label {
@@ -439,19 +439,19 @@ h6 {
   background: var(--clr-accent);
   color: var(--clr-white);
   border-color: var(--clr-accent);
-  box-shadow: 0 4px 14px rgba(255, 74, 28, 0.25);
+  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.35); /* Matched to clr-accent (Blue) */
 }
 
 .btn-primary:hover {
   background: var(--clr-accent-dark);
   border-color: var(--clr-accent-dark);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(255, 74, 28, 0.4);
+  box-shadow: 0 8px 24px rgba(59, 130, 246, 0.5); /* Increased for prominence */
 }
 
 .btn-primary:active {
   transform: translateY(0); /* Premium tactile feedback */
-  background: #C2410C; /* Darker fixed accent for high-contrast pressed state */
+  background: #1D4ED8; /* Darker blue accent for high-contrast pressed state */
   box-shadow: 0 4px 10px rgba(11, 19, 43, 0.2);
 }
 
@@ -647,7 +647,7 @@ h6 {
   display: block;
   font-size: .875rem;
   font-weight: 600;
-  color: var(--clr-gray-800);
+  color: var(--clr-gray-900); /* Maximum contrast for accessibility */
   margin-bottom: 8px;
 }
 
@@ -670,7 +670,7 @@ h6 {
 }
 
 .form-control::placeholder {
-  color: var(--clr-gray-400);
+  color: var(--clr-gray-500); /* Darker for better visibility */
 }
 
 select.form-control {
@@ -968,6 +968,43 @@ select.form-control {
 
 .mobile-dropdown-item:hover {
   color: var(--clr-accent);
+}
+
+/* ── Mobile Menu Toggles (Theme & RTL) ─────────────────── */
+.nav-mobile .theme-toggle,
+.nav-mobile .rtl-toggle {
+  background: var(--clr-bg-card);
+  border: 1px solid var(--clr-border);
+  padding: 10px 16px;
+  border-radius: var(--radius-md);
+  color: var(--clr-primary);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--trans-base);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.nav-mobile .theme-toggle:hover,
+.nav-mobile .rtl-toggle:hover {
+  background: var(--clr-accent);
+  color: var(--clr-white);
+  border-color: var(--clr-accent);
+}
+
+[data-theme="dark"] .nav-mobile .theme-toggle,
+[data-theme="dark"] .nav-mobile .rtl-toggle {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--clr-gray-100);
+}
+
+[data-theme="dark"] .nav-mobile .theme-toggle:hover,
+[data-theme="dark"] .nav-mobile .rtl-toggle:hover {
+  background: var(--clr-accent);
+  color: var(--clr-white);
 }
 
 /* ── 11. HERO (HOME 1) ──────────────────────────────────── */
@@ -3053,6 +3090,12 @@ select.form-control {
     display: block;
   }
 
+  /* Hide toggles in nav-actions on mobile – they're in mobile menu */
+  .nav-actions .theme-toggle,
+  .nav-actions .rtl-toggle {
+    display: none !important;
+  }
+
   /* Keep Login/Sign Up visible at tablet — just smaller */
   .nav-actions {
     margin-left: auto;
@@ -3064,15 +3107,20 @@ select.form-control {
     font-size: 0.8125rem;
   }
 
-  /* Shrink RTL toggle label at tablet */
-  .rtl-toggle span {
+  /* Shrink RTL toggle label at tablet – only in nav-actions, not mobile menu */
+  .nav-actions .rtl-toggle span {
     display: none;
   }
 
-  .rtl-toggle {
+  .nav-actions .rtl-toggle {
     padding: 0 10px;
     min-width: 36px;
     justify-content: center;
+  }
+
+  /* Keep RTL toggle text visible in mobile menu */
+  .nav-mobile .rtl-toggle span {
+    display: inline;
   }
 
   .nav-inner {
@@ -3755,6 +3803,15 @@ body {
   color: #FFB38A;
   background: rgba(249, 115, 22, 0.15) !important;
   border-color: rgba(249, 115, 22, 0.3) !important;
+}
+
+/* ── Desktop: Hide duplicate toggles in mobile menu ── */
+@media (min-width: 992px) {
+  /* Hide the toggles that are in the mobile menu on desktop */
+  .nav-mobile .theme-toggle,
+  .nav-mobile .rtl-toggle {
+    display: none !important;
+  }
 }
 
 /* ── 1024px Nav Alignment & spacing ── */

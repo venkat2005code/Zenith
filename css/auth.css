@@ -296,10 +296,10 @@ body.auth-page {
 .auth-subhead {
   text-align: center;
   font-size: .9375rem;
-  color: var(--clr-gray-500);
+  color: var(--clr-gray-600); /* Darker for better contrast */
   margin-bottom: 32px;
   line-height: 1.5;
-  font-weight: 450;
+  font-weight: 500; /* Increased weight for clarity */
 }
 
 .auth-subhead a {
@@ -370,9 +370,9 @@ body.auth-page {
   align-items: center;
   text-align: center;
   margin: 24px 0;
-  color: var(--clr-gray-400);
+  color: var(--clr-gray-500); /* Darker for better visibility */
   font-size: 0.8125rem;
-  font-weight: 500;
+  font-weight: 600; /* Slightly heavier for readability */
 }
 
 .auth-divider::before,
@@ -428,7 +428,7 @@ body.auth-page {
 }
 
 .form-control::placeholder {
-  color: var(--clr-gray-400);
+  color: var(--clr-gray-500); /* Matched with style.css refinement */
 }
 
 .form-control:hover {
@@ -526,7 +526,7 @@ body.auth-page {
 
 .check-row label {
   font-size: 0.875rem;
-  color: var(--clr-gray-600);
+  color: var(--clr-gray-700); /* Significantly darker for accessibility */
   cursor: pointer;
   user-select: none;
 }
@@ -571,7 +571,7 @@ body.auth-page {
 .auth-submit-btn:hover {
   background: var(--clr-accent-dark);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(255, 74, 28, 0.3);
+  box-shadow: 0 8px 24px rgba(59, 130, 246, 0.4); /* Matched to clr-accent (Blue) */
 }
 
 .auth-submit-btn:active {

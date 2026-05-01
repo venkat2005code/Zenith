@@ -16,12 +16,14 @@ function initRTLToggle() {
   }
   
   setDir(stored);
+  updateRTLToggleText(stored);
 
   toggleBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       const current = document.documentElement.getAttribute('dir') || 'ltr';
       const next = current === 'ltr' ? 'rtl' : 'ltr';
       setDir(next);
+      updateRTLToggleText(next);
       try {
         localStorage.setItem('swiftship-dir', next);
       } catch (e) {
@@ -33,6 +35,16 @@ function initRTLToggle() {
 
 function setDir(dir) {
   document.documentElement.setAttribute('dir', dir);
+}
+
+function updateRTLToggleText(dir) {
+  const toggleBtns = document.querySelectorAll('.rtl-toggle, .auth-rtl-toggle');
+  toggleBtns.forEach(btn => {
+    const span = btn.querySelector('span');
+    if (span) {
+      span.textContent = dir === 'rtl' ? 'RTL' : 'LTR';
+    }
+  });
 }
 
 /* ── THEME TOGGLE ────────────────────────────────────────── */

@@ -304,7 +304,7 @@
 
 .topbar-subtitle {
   font-size: .875rem;
-  color: var(--clr-gray-400);
+  color: var(--clr-gray-500); /* Darker for better visibility */
 }
 
 .topbar-right {
@@ -338,7 +338,7 @@
 }
 
 .topbar-search i {
-  color: var(--clr-gray-400);
+  color: var(--clr-gray-500); /* Darker for better contrast */
   font-size: .875rem;
 }
 
@@ -514,15 +514,15 @@
 .kpi-card:hover {
   transform: translateY(-3px);
   box-shadow: var(--shadow-xl);
-  border-color: rgba(11, 19, 43, 0.08);
+  border-color: var(--clr-border-strong); /* Stronger border for clarity */
 }
 
 .kpi-info .kpi-label {
   font-size: .8rem;
-  font-weight: 600;
+  font-weight: 700; /* Increased weight */
   letter-spacing: .06em;
   text-transform: uppercase;
-  color: var(--clr-gray-400);
+  color: var(--clr-gray-600); /* Darker for better contrast */
   margin-bottom: 8px;
 }
 
