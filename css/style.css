@@ -949,6 +949,27 @@ select.form-control {
   color: var(--clr-accent);
 }
 
+/* Chevron icon styling */
+.mobile-nav-link .chevron-m {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  font-size: 0.875rem;
+  transition: transform var(--trans-base);
+  flex-shrink: 0;
+}
+
+[data-theme="dark"] .mobile-nav-link {
+  color: var(--clr-gray-200);
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .mobile-nav-link:hover {
+  color: var(--clr-accent);
+}
+
 .mobile-dropdown {
   display: none;
   padding: 8px 0 0 16px;
