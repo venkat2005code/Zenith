@@ -1327,14 +1327,15 @@ select.form-control {
 .service-card {
   background: var(--clr-bg-card);
   border-radius: var(--radius-lg);
-  padding: 0;
+  padding: 24px;
   display: flex;
   flex-direction: column;
   border: 1px solid var(--clr-border);
   transition: all var(--trans-base);
   box-shadow: var(--shadow-sm);
   height: 100%;
-  overflow: hidden;
+  overflow: visible;
+  gap: 12px;
 }
 
 .service-card:hover {
@@ -1360,26 +1361,19 @@ select.form-control {
   transform: scale(1.1);
 }
 
-.service-card .card-content {
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-}
-
 .service-card .card-icon {
   font-size: 1.5rem;
   width: 48px;
   height: 48px;
   border-radius: 12px;
-  margin-bottom: 16px;
+  margin-bottom: 0;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .service-card h4 {
-  margin-bottom: 10px;
+  margin-bottom: 0;
   font-size: 1.1875rem;
 }
 
@@ -1387,7 +1381,7 @@ select.form-control {
   color: var(--clr-gray-600);
   flex: 1;
   font-size: .9375rem;
-  margin-bottom: 20px;
+  margin-bottom: 0;
 }
 
 .service-card .cta-link {
@@ -1397,7 +1391,6 @@ select.form-control {
   display: flex;
   align-items: center;
   gap: 6px;
-  margin-top: auto;
   transition: gap var(--trans-fast);
 }
 
