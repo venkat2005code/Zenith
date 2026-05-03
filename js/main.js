@@ -42,7 +42,7 @@ function updateRTLToggleText(dir) {
   toggleBtns.forEach(btn => {
     const span = btn.querySelector('span');
     if (span) {
-      span.textContent = dir === 'rtl' ? 'RTL' : 'LTR';
+      span.textContent = dir.toUpperCase();
     }
   });
 }
@@ -101,13 +101,13 @@ function applyTheme(theme) {
         icon.classList.remove('fa-moon');
         icon.classList.add('fa-sun');
       }
-      if (span) span.textContent = 'Light Mode';
+      if (span) span.textContent = 'Dark Mode';
     } else {
       if (icon) {
         icon.classList.remove('fa-sun');
         icon.classList.add('fa-moon');
       }
-      if (span) span.textContent = 'Dark Mode';
+      if (span) span.textContent = 'Light Mode';
     }
   });
 }

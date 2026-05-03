@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,449 +10,598 @@
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/dashboard.css" />
 </head>
+
 <body>
 
-<div class="dashboard-wrapper">
+  <div class="dashboard-wrapper">
 
-  <!-- SIDEBAR -->
-  <aside class="sidebar" id="sidebar">
-    <div class="sidebar-brand">
-      <a href="index.html" class="sidebar-brand-link">
-        <div class="nav-brand-icon"><i class="fas fa-paper-plane"></i></div>
-        <span>Zenith</span>
-      </a>
-    </div>
-
-    <nav class="sidebar-nav">
-      <span class="sidebar-nav-label">Main Menu</span>
-      <a href="#overview"  class="sidebar-link active" data-tab="overview">
-        <i class="fas fa-chart-pie"></i><span>Overview</span>
-      </a>
-      <a href="#shipments" class="sidebar-link" data-tab="shipments">
-        <i class="fas fa-box-open"></i><span>Active Shipments</span>
-        <span class="sidebar-badge">3</span>
-      </a>
-      <a href="#history" class="sidebar-link" data-tab="history">
-        <i class="fas fa-clock-rotate-left"></i><span>History</span>
-      </a>
-      <a href="#addresses" class="sidebar-link" data-tab="addresses">
-        <i class="fas fa-location-dot"></i><span>Saved Addresses</span>
-      </a>
-
-      <span class="sidebar-nav-label" style="margin-top:12px;">Account</span>
-      <a href="#profile" class="sidebar-link" data-tab="profile">
-        <i class="fas fa-user-circle"></i><span>Profile Settings</span>
-      </a>
-      <a href="#notifications" class="sidebar-link" data-tab="notifications">
-        <i class="fas fa-bell"></i><span>Notifications</span>
-        <span class="sidebar-badge badge-teal">5</span>
-      </a>
-    </nav>
-
-    <button class="logout-btn" id="logoutBtn">
-      <i class="fas fa-right-from-bracket"></i><span>Logout</span>
-    </button>
-  </aside>
-  <div class="sidebar-overlay" id="sidebarOverlay"></div>
-
-  <!-- MAIN -->
-  <main class="dash-main">
-
-    <!-- TOPBAR -->
-    <header class="dash-topbar">
-      <div class="topbar-left">
-        <button class="sidebar-toggle" id="sidebarToggle"><i class="fas fa-bars"></i></button>
-        <div class="topbar-title">
-          <h5 id="topbar-page-title">Overview</h5>
-          <span class="topbar-subtitle">Welcome back, James 👋</span>
-        </div>
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-brand">
+        <a href="index.html" class="sidebar-brand-link">
+          <div class="nav-brand-icon"><i class="fas fa-paper-plane"></i></div>
+          <span>Zenith</span>
+        </a>
       </div>
-      <div class="topbar-right">
-        <div class="topbar-search-wrap">
-          <i class="fas fa-search topbar-search-icon"></i>
-          <input type="text" class="topbar-search" placeholder="Track shipment…" />
+
+      <nav class="sidebar-nav">
+        <span class="sidebar-nav-label">Main Menu</span>
+        <a href="#overview" class="sidebar-link active" data-tab="overview">
+          <i class="fas fa-chart-pie"></i><span>Overview</span>
+        </a>
+        <a href="#shipments" class="sidebar-link" data-tab="shipments">
+          <i class="fas fa-box-open"></i><span>Active Shipments</span>
+          <span class="sidebar-badge">3</span>
+        </a>
+        <a href="#history" class="sidebar-link" data-tab="history">
+          <i class="fas fa-clock-rotate-left"></i><span>History</span>
+        </a>
+        <a href="#addresses" class="sidebar-link" data-tab="addresses">
+          <i class="fas fa-location-dot"></i><span>Saved Addresses</span>
+        </a>
+
+        <span class="sidebar-nav-label" style="margin-top:12px;">Account</span>
+        <a href="#profile" class="sidebar-link" data-tab="profile">
+          <i class="fas fa-user-circle"></i><span>Profile Settings</span>
+        </a>
+        <a href="#notifications" class="sidebar-link" data-tab="notifications">
+          <i class="fas fa-bell"></i><span>Notifications</span>
+          <span class="sidebar-badge badge-teal">5</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="sidebar-controls">
+          <button class="theme-toggle sidebar-ctrl-btn" id="dashThemeToggle" title="Toggle Theme">
+            <i class="fas fa-moon"></i>
+            <span>Dark Mode</span>
+          </button>
+          <button class="topbar-rtl sidebar-ctrl-btn" id="dashRtlToggle" title="Toggle RTL/LTR">
+            <i class="fas fa-language"></i>
+            <span>LTR</span>
+          </button>
         </div>
-        <button class="topbar-icon-btn" title="Notifications">
-          <i class="fas fa-bell"></i>
-          <span class="topbar-notif-dot"></span>
+        <button class="logout-btn" id="logoutBtn">
+          <i class="fas fa-right-from-bracket"></i><span>Logout</span>
         </button>
-        <button class="theme-toggle" id="dashThemeToggle" title="Toggle Theme">
-          <i class="fas fa-moon"></i>
-        </button>
-        <button class="topbar-rtl btn btn-sm btn-outline-primary" id="dashRtlToggle" title="Toggle RTL/LTR">
-          <span>LTR</span>
-        </button>
-        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User" class="topbar-avatar" />
       </div>
-    </header>
+    </aside>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
 
-    <div class="dash-content">
+    <!-- MAIN -->
+    <main class="dash-main">
 
-      <!-- OVERVIEW TAB -->
-      <div class="dash-tab" id="tab-overview">
-        <!-- KPI CARDS -->
-        <div class="kpi-grid">
-          <div class="kpi-card kpi-primary">
-            <div class="kpi-icon"><i class="fas fa-boxes-stacked"></i></div>
-            <div class="kpi-info">
-              <span class="kpi-label">Total Shipments</span>
-              <h3 class="kpi-value" data-count="142">0</h3>
-              <span class="kpi-change up"><i class="fas fa-arrow-trend-up"></i> +12 this month</span>
+      <!-- TOPBAR -->
+      <header class="dash-topbar">
+        <div class="topbar-left">
+          <button class="sidebar-toggle" id="sidebarToggle"><i class="fas fa-bars"></i></button>
+          <div class="topbar-title">
+            <h5 id="topbar-page-title">Overview</h5>
+            <span class="topbar-subtitle">Welcome back, James 👋</span>
+          </div>
+        </div>
+        <div class="topbar-right">
+          <div class="topbar-search-wrap">
+            <i class="fas fa-search topbar-search-icon"></i>
+            <input type="text" class="topbar-search" placeholder="Track shipment…" />
+          </div>
+          <button class="topbar-icon-btn" title="Notifications">
+            <i class="fas fa-bell"></i>
+            <span class="topbar-notif-dot"></span>
+          </button>
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User" class="topbar-avatar" />
+        </div>
+      </header>
+
+      <div class="dash-content">
+
+        <!-- OVERVIEW TAB -->
+        <div class="dash-tab" id="tab-overview">
+          <!-- KPI CARDS -->
+          <div class="kpi-grid">
+            <div class="kpi-card kpi-primary">
+              <div class="kpi-icon"><i class="fas fa-boxes-stacked"></i></div>
+              <div class="kpi-info">
+                <span class="kpi-label">Total Shipments</span>
+                <h3 class="kpi-value" data-count="142">0</h3>
+                <span class="kpi-change up"><i class="fas fa-arrow-trend-up"></i> +12 this month</span>
+              </div>
+            </div>
+            <div class="kpi-card kpi-success">
+              <div class="kpi-icon"><i class="fas fa-circle-check"></i></div>
+              <div class="kpi-info">
+                <span class="kpi-label">Delivered</span>
+                <h3 class="kpi-value" data-count="128">0</h3>
+                <span class="kpi-change up"><i class="fas fa-arrow-trend-up"></i> 90.1% success</span>
+              </div>
+            </div>
+            <div class="kpi-card kpi-accent">
+              <div class="kpi-icon"><i class="fas fa-truck-fast"></i></div>
+              <div class="kpi-info">
+                <span class="kpi-label">In Transit</span>
+                <h3 class="kpi-value" data-count="3">0</h3>
+                <span class="kpi-change"><i class="fas fa-circle-dot"></i> Active now</span>
+              </div>
+            </div>
+            <div class="kpi-card kpi-teal">
+              <div class="kpi-icon"><i class="fas fa-dollar-sign"></i></div>
+              <div class="kpi-info">
+                <span class="kpi-label">Total Spent</span>
+                <h3 class="kpi-value">$<span data-count="2847">0</span></h3>
+                <span class="kpi-change up"><i class="fas fa-arrow-trend-up"></i> +$340 this month</span>
+              </div>
             </div>
           </div>
-          <div class="kpi-card kpi-success">
-            <div class="kpi-icon"><i class="fas fa-circle-check"></i></div>
-            <div class="kpi-info">
-              <span class="kpi-label">Delivered</span>
-              <h3 class="kpi-value" data-count="128">0</h3>
-              <span class="kpi-change up"><i class="fas fa-arrow-trend-up"></i> 90.1% success</span>
+
+          <!-- ACTIVE SHIPMENT MINI + DELIVERY PROGRESS -->
+          <div class="dash-split-grid">
+
+            <!-- Recent activity -->
+            <div class="dash-card">
+              <div class="dash-card-header">
+                <h6>Recent Activity</h6>
+                <a href="#" class="dash-card-action" data-tab="shipments">View All</a>
+              </div>
+              <div class="table-wrapper">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>Destination</th>
+                      <th>Status</th>
+                      <th>ETA</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><span class="ship-id">SWS-78432</span></td>
+                      <td>Los Angeles, CA</td>
+                      <td><span class="badge badge-accent">In Transit</span></td>
+                      <td>Jan 28</td>
+                    </tr>
+                    <tr>
+                      <td><span class="ship-id">SWS-78291</span></td>
+                      <td>Chicago, IL</td>
+                      <td><span class="badge badge-success">Delivered</span></td>
+                      <td>Jan 24</td>
+                    </tr>
+                    <tr>
+                      <td><span class="ship-id">SWS-78187</span></td>
+                      <td>Miami, FL</td>
+                      <td><span class="badge badge-success">Delivered</span></td>
+                      <td>Jan 20</td>
+                    </tr>
+                    <tr>
+                      <td><span class="ship-id">SWS-77943</span></td>
+                      <td>Seattle, WA</td>
+                      <td><span class="badge badge-warning">Pending</span></td>
+                      <td>Jan 30</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Delivery breakdown donut -->
+            <div class="dash-card">
+              <div class="dash-card-header">
+                <h6>Delivery Status</h6>
+              </div>
+              <div style="display:flex;flex-direction:column;align-items:center;gap:16px;padding-top:8px;">
+                <svg class="donut-svg" viewBox="0 0 120 120" data-pct="90">
+                  <circle class="donut-bg" cx="60" cy="60" r="50" />
+                  <circle class="donut-fill success-fill" cx="60" cy="60" r="50" />
+                  <text x="50%" y="52%" class="donut-text" text-anchor="middle">90%</text>
+                  <text x="50%" y="64%" class="donut-sub" text-anchor="middle">On-Time</text>
+                </svg>
+                <div style="width:100%;display:flex;flex-direction:column;gap:8px;font-size:.8125rem;">
+                  <div style="display:flex;justify-content:space-between;align-items:center;"><span><span
+                        style="display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--clr-success);margin-right:6px;"></span>Delivered</span><strong>128</strong>
+                  </div>
+                  <div style="display:flex;justify-content:space-between;align-items:center;"><span><span
+                        style="display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--clr-accent);margin-right:6px;"></span>In
+                      Transit</span><strong>3</strong></div>
+                  <div style="display:flex;justify-content:space-between;align-items:center;"><span><span
+                        style="display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--clr-warning);margin-right:6px;"></span>Pending</span><strong>7</strong>
+                  </div>
+                  <div style="display:flex;justify-content:space-between;align-items:center;"><span><span
+                        style="display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--clr-danger);margin-right:6px;"></span>Failed</span><strong>4</strong>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="kpi-card kpi-accent">
-            <div class="kpi-icon"><i class="fas fa-truck-fast"></i></div>
-            <div class="kpi-info">
-              <span class="kpi-label">In Transit</span>
-              <h3 class="kpi-value" data-count="3">0</h3>
-              <span class="kpi-change"><i class="fas fa-circle-dot"></i> Active now</span>
+
+          <!-- Quick Ship + Spend bar chart -->
+          <div class="dash-split-grid-rev">
+            <div class="dash-card">
+              <div class="dash-card-header">
+                <h6>Quick Actions</h6>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:10px;padding-top:4px;">
+                <a href="tracking.html" class="btn btn-primary btn-block"><i class="fas fa-search"></i> Track
+                  Shipment</a>
+                <button class="btn btn-outline-primary btn-block"><i class="fas fa-box"></i> New Shipment</button>
+                <button class="btn btn-outline-primary btn-block"><i class="fas fa-file-invoice"></i> Get a
+                  Quote</button>
+                <button class="btn btn-outline-primary btn-block"><i class="fas fa-download"></i> Download
+                  Invoice</button>
+              </div>
             </div>
-          </div>
-          <div class="kpi-card kpi-teal">
-            <div class="kpi-icon"><i class="fas fa-dollar-sign"></i></div>
-            <div class="kpi-info">
-              <span class="kpi-label">Total Spent</span>
-              <h3 class="kpi-value">$<span data-count="2847">0</span></h3>
-              <span class="kpi-change up"><i class="fas fa-arrow-trend-up"></i> +$340 this month</span>
+
+            <div class="dash-card">
+              <div class="dash-card-header">
+                <h6>Monthly Spend (USD)</h6><a href="#" class="dash-card-action">Export</a>
+              </div>
+              <div class="chart-scroll-wrap">
+                <div class="chart-bar-visual">
+                  <div class="bar-group">
+                    <div class="bar-fill" style="height:35%;background:var(--clr-accent);"></div><span
+                      class="bar-label">Jul</span>
+                  </div>
+                  <div class="bar-group">
+                    <div class="bar-fill" style="height:52%;background:var(--clr-accent);"></div><span
+                      class="bar-label">Aug</span>
+                  </div>
+                  <div class="bar-group">
+                    <div class="bar-fill" style="height:44%;background:var(--clr-accent);"></div><span
+                      class="bar-label">Sep</span>
+                  </div>
+                  <div class="bar-group">
+                    <div class="bar-fill" style="height:70%;background:var(--clr-accent);"></div><span
+                      class="bar-label">Oct</span>
+                  </div>
+                  <div class="bar-group">
+                    <div class="bar-fill" style="height:58%;background:var(--clr-accent);"></div><span
+                      class="bar-label">Nov</span>
+                  </div>
+                  <div class="bar-group">
+                    <div class="bar-fill" style="height:88%;background:var(--clr-primary);"></div><span
+                      class="bar-label">Dec</span>
+                  </div>
+                  <div class="bar-group">
+                    <div class="bar-fill" style="height:75%;background:var(--clr-teal);"></div><span
+                      class="bar-label">Jan</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- ACTIVE SHIPMENT MINI + DELIVERY PROGRESS -->
-        <div class="dash-split-grid">
-
-          <!-- Recent activity -->
+        <!-- ACTIVE SHIPMENTS TAB -->
+        <div class="dash-tab" id="tab-shipments" style="display:none;">
           <div class="dash-card">
             <div class="dash-card-header">
-              <h6>Recent Activity</h6>
-              <a href="#" class="dash-card-action" data-tab="shipments">View All</a>
+              <h6>Active Shipments <span class="badge badge-accent" style="margin-left:8px;">3 in transit</span></h6>
+              <button class="btn btn-primary btn-sm"><i class="fas fa-plus"></i> New Shipment</button>
             </div>
             <div class="table-wrapper">
-              <table class="data-table">
-                <thead><tr><th>ID</th><th>Destination</th><th>Status</th><th>ETA</th></tr></thead>
+              <table class="data-table" id="shipments-table">
+                <thead>
+                  <tr>
+                    <th data-sort="id">Tracking ID</th>
+                    <th data-sort="origin">Origin</th>
+                    <th data-sort="dest">Destination</th>
+                    <th data-sort="service">Service</th>
+                    <th data-sort="weight">Weight</th>
+                    <th data-sort="status">Status</th>
+                    <th data-sort="eta">ETA</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
                 <tbody>
-                  <tr><td><span class="ship-id">SWS-78432</span></td><td>Los Angeles, CA</td><td><span class="badge badge-accent">In Transit</span></td><td>Jan 28</td></tr>
-                  <tr><td><span class="ship-id">SWS-78291</span></td><td>Chicago, IL</td><td><span class="badge badge-success">Delivered</span></td><td>Jan 24</td></tr>
-                  <tr><td><span class="ship-id">SWS-78187</span></td><td>Miami, FL</td><td><span class="badge badge-success">Delivered</span></td><td>Jan 20</td></tr>
-                  <tr><td><span class="ship-id">SWS-77943</span></td><td>Seattle, WA</td><td><span class="badge badge-warning">Pending</span></td><td>Jan 30</td></tr>
+                  <tr>
+                    <td><span class="ship-id">SWS-2024-78432</span></td>
+                    <td>New York, NY</td>
+                    <td>Los Angeles, CA</td>
+                    <td><span class="badge badge-teal">Express</span></td>
+                    <td>2.4 kg</td>
+                    <td><span class="badge badge-accent">In Transit</span></td>
+                    <td>Jan 28, 2024</td>
+                    <td>
+                      <a href="tracking.html?t=SWS-2024-78432" class="btn btn-sm btn-outline-primary"><i
+                          class="fas fa-search"></i> Track</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span class="ship-id">SWS-2024-77943</span></td>
+                    <td>New York, NY</td>
+                    <td>Seattle, WA</td>
+                    <td><span class="badge badge-secondary">Standard</span></td>
+                    <td>0.9 kg</td>
+                    <td><span class="badge badge-warning">Pending</span></td>
+                    <td>Jan 30, 2024</td>
+                    <td>
+                      <a href="tracking.html?t=SWS-2024-77943" class="btn btn-sm btn-outline-primary"><i
+                          class="fas fa-search"></i> Track</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span class="ship-id">SWS-2024-77801</span></td>
+                    <td>Boston, MA</td>
+                    <td>Austin, TX</td>
+                    <td><span class="badge badge-accent-dark">Same-Day</span></td>
+                    <td>1.2 kg</td>
+                    <td><span class="badge badge-accent">In Transit</span></td>
+                    <td>Jan 28, 2024</td>
+                    <td>
+                      <a href="tracking.html?t=SWS-2024-77801" class="btn btn-sm btn-outline-primary"><i
+                          class="fas fa-search"></i> Track</a>
+                    </td>
+                  </tr>
                 </tbody>
               </table>
             </div>
           </div>
+        </div>
 
-          <!-- Delivery breakdown donut -->
+        <!-- HISTORY TAB -->
+        <div class="dash-tab" id="tab-history" style="display:none;">
           <div class="dash-card">
-            <div class="dash-card-header"><h6>Delivery Status</h6></div>
-            <div style="display:flex;flex-direction:column;align-items:center;gap:16px;padding-top:8px;">
-              <svg class="donut-svg" viewBox="0 0 120 120" data-pct="90">
-                <circle class="donut-bg" cx="60" cy="60" r="50"/>
-                <circle class="donut-fill success-fill" cx="60" cy="60" r="50"/>
-                <text x="50%" y="52%" class="donut-text" text-anchor="middle">90%</text>
-                <text x="50%" y="64%" class="donut-sub" text-anchor="middle">On-Time</text>
-              </svg>
-              <div style="width:100%;display:flex;flex-direction:column;gap:8px;font-size:.8125rem;">
-                <div style="display:flex;justify-content:space-between;align-items:center;"><span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--clr-success);margin-right:6px;"></span>Delivered</span><strong>128</strong></div>
-                <div style="display:flex;justify-content:space-between;align-items:center;"><span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--clr-accent);margin-right:6px;"></span>In Transit</span><strong>3</strong></div>
-                <div style="display:flex;justify-content:space-between;align-items:center;"><span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--clr-warning);margin-right:6px;"></span>Pending</span><strong>7</strong></div>
-                <div style="display:flex;justify-content:space-between;align-items:center;"><span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--clr-danger);margin-right:6px;"></span>Failed</span><strong>4</strong></div>
-              </div>
+            <div class="dash-card-header">
+              <h6>Shipment History <span class="badge badge-secondary" style="margin-left:8px;">128 delivered</span>
+              </h6>
+              <button class="btn btn-sm btn-outline-primary"><i class="fas fa-filter"></i> Filter</button>
+            </div>
+            <div class="table-wrapper">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Tracking ID</th>
+                    <th>Destination</th>
+                    <th>Service</th>
+                    <th>Weight</th>
+                    <th>Cost</th>
+                    <th>Status</th>
+                    <th>Delivered</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="ship-id">SWS-78291</span></td>
+                    <td>Chicago, IL</td>
+                    <td><span class="badge badge-teal">Express</span></td>
+                    <td>1.8 kg</td>
+                    <td>$18.50</td>
+                    <td><span class="badge badge-success">Delivered</span></td>
+                    <td>Jan 24, 2024</td>
+                  </tr>
+                  <tr>
+                    <td><span class="ship-id">SWS-78187</span></td>
+                    <td>Miami, FL</td>
+                    <td><span class="badge badge-secondary">Standard</span></td>
+                    <td>3.2 kg</td>
+                    <td>$12.00</td>
+                    <td><span class="badge badge-success">Delivered</span></td>
+                    <td>Jan 20, 2024</td>
+                  </tr>
+                  <tr>
+                    <td><span class="ship-id">SWS-78012</span></td>
+                    <td>Denver, CO</td>
+                    <td><span class="badge badge-teal">Express</span></td>
+                    <td>0.6 kg</td>
+                    <td>$9.50</td>
+                    <td><span class="badge badge-success">Delivered</span></td>
+                    <td>Jan 16, 2024</td>
+                  </tr>
+                  <tr>
+                    <td><span class="ship-id">SWS-77880</span></td>
+                    <td>Phoenix, AZ</td>
+                    <td><span class="badge badge-secondary">Standard</span></td>
+                    <td>2.1 kg</td>
+                    <td>$11.20</td>
+                    <td><span class="badge badge-success">Delivered</span></td>
+                    <td>Jan 11, 2024</td>
+                  </tr>
+                  <tr>
+                    <td><span class="ship-id">SWS-77712</span></td>
+                    <td>Houston, TX</td>
+                    <td><span class="badge badge-accent-dark">Same-Day</span></td>
+                    <td>1.4 kg</td>
+                    <td>$27.80</td>
+                    <td><span class="badge badge-danger">Failed</span></td>
+                    <td>Jan 7, 2024</td>
+                  </tr>
+                  <tr>
+                    <td><span class="ship-id">SWS-77540</span></td>
+                    <td>San Francisco, CA</td>
+                    <td><span class="badge badge-teal">Express</span></td>
+                    <td>4.0 kg</td>
+                    <td>$22.40</td>
+                    <td><span class="badge badge-success">Delivered</span></td>
+                    <td>Jan 2, 2024</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
 
-        <!-- Quick Ship + Spend bar chart -->
-        <div class="dash-split-grid-rev">
+        <!-- ADDRESSES TAB -->
+        <div class="dash-tab" id="tab-addresses" style="display:none;">
+          <div class="dash-card-header" style="margin-bottom:20px;">
+            <h6>Saved Addresses</h6>
+            <button class="btn btn-primary btn-sm"><i class="fas fa-plus"></i> Add Address</button>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;">
+            <div class="address-card">
+              <div class="address-card-top">
+                <span class="badge badge-accent">Home</span>
+                <button class="btn-icon-ghost"><i class="fas fa-ellipsis-v"></i></button>
+              </div>
+              <p class="address-name"><i class="fas fa-user"></i> James Carter</p>
+              <p class="address-line"><i class="fas fa-map-marker-alt"></i> 142 West 68th Street, Apt 5B<br>New York, NY
+                10023</p>
+              <p class="address-line"><i class="fas fa-phone"></i> +1 212 555 0034</p>
+              <div class="address-card-actions">
+                <button class="btn btn-sm btn-outline-primary"><i class="fas fa-pencil"></i> Edit</button>
+                <button class="btn btn-sm btn-ghost-danger"><i class="fas fa-trash"></i></button>
+              </div>
+            </div>
+            <div class="address-card">
+              <div class="address-card-top">
+                <span class="badge badge-teal">Office</span>
+                <button class="btn-icon-ghost"><i class="fas fa-ellipsis-v"></i></button>
+              </div>
+              <p class="address-name"><i class="fas fa-building"></i> Carter & Associates</p>
+              <p class="address-line"><i class="fas fa-map-marker-alt"></i> 420 Lexington Ave, Suite 800<br>New York, NY
+                10170</p>
+              <p class="address-line"><i class="fas fa-phone"></i> +1 212 555 8800</p>
+              <div class="address-card-actions">
+                <button class="btn btn-sm btn-outline-primary"><i class="fas fa-pencil"></i> Edit</button>
+                <button class="btn btn-sm btn-ghost-danger"><i class="fas fa-trash"></i></button>
+              </div>
+            </div>
+            <div class="address-card address-card-add">
+              <button class="btn-add-address">
+                <i class="fas fa-plus-circle"></i>
+                <span>Add New Address</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROFILE TAB -->
+        <div class="dash-tab" id="tab-profile" style="display:none;">
+          <div class="dash-profile-grid">
+            <div class="dash-card" style="text-align:center;padding:32px 20px;">
+              <div style="position:relative;display:inline-block;margin-bottom:16px;">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Profile"
+                  style="width:96px;height:96px;border-radius:50%;object-fit:cover;border:3px solid var(--clr-accent);" />
+                <button
+                  style="position:absolute;bottom:0;right:0;background:var(--clr-accent);color:#fff;border:none;width:28px;height:28px;border-radius:50%;cursor:pointer;font-size:.75rem;"><i
+                    class="fas fa-camera"></i></button>
+              </div>
+              <h5 style="margin-bottom:4px;">James Carter</h5>
+              <p style="font-size:.8rem;color:var(--clr-gray-500);margin-bottom:16px;">Customer · Member since 2021</p>
+              <span class="badge badge-success" style="font-size:.75rem;">Verified Account</span>
+              <div
+                style="margin-top:24px;display:flex;flex-direction:column;gap:8px;text-align:start;font-size:.8125rem;color:var(--clr-gray-600);">
+                <div><i class="fas fa-star" style="color:var(--clr-warning);width:16px;"></i> Rating: <strong>4.9 /
+                    5</strong></div>
+                <div><i class="fas fa-boxes-stacked" style="color:var(--clr-primary);width:16px;"></i> Total Shipments:
+                  <strong>142</strong></div>
+                <div><i class="fas fa-wallet" style="color:var(--clr-teal);width:16px;"></i> Wallet Balance:
+                  <strong>$220.00</strong></div>
+              </div>
+            </div>
+
+            <div class="dash-card">
+              <div class="dash-card-header" style="margin-bottom:24px;">
+                <h6>Profile Settings</h6>
+              </div>
+              <form>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label">First Name</label>
+                    <input type="text" class="form-control" value="James" />
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Last Name</label>
+                    <input type="text" class="form-control" value="Carter" />
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label">Email Address</label>
+                    <input type="email" class="form-control" value="james@company.com" />
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Phone Number</label>
+                    <input type="tel" class="form-control" value="+1 212 555 0034" />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Company (optional)</label>
+                  <input type="text" class="form-control" value="Carter & Associates" />
+                </div>
+                <hr style="border:none;border-top:1px solid var(--clr-gray-100);margin:20px 0;" />
+                <h6 style="margin-bottom:16px;font-size:.875rem;">Change Password</h6>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label">Current Password</label>
+                    <input type="password" class="form-control" placeholder="••••••••" />
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">New Password</label>
+                    <input type="password" class="form-control" placeholder="••••••••" />
+                  </div>
+                </div>
+                <div style="display:flex;gap:12px;margin-top:8px;">
+                  <button type="submit" class="btn btn-primary">Save Changes</button>
+                  <button type="button" class="btn btn-outline-primary">Cancel</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- NOTIFICATIONS TAB -->
+        <div class="dash-tab" id="tab-notifications" style="display:none;">
           <div class="dash-card">
-            <div class="dash-card-header"><h6>Quick Actions</h6></div>
-            <div style="display:flex;flex-direction:column;gap:10px;padding-top:4px;">
-              <a href="tracking.html" class="btn btn-primary btn-block"><i class="fas fa-search"></i> Track Shipment</a>
-              <button class="btn btn-outline-primary btn-block"><i class="fas fa-box"></i> New Shipment</button>
-              <button class="btn btn-outline-primary btn-block"><i class="fas fa-file-invoice"></i> Get a Quote</button>
-              <button class="btn btn-outline-primary btn-block"><i class="fas fa-download"></i> Download Invoice</button>
+            <div class="dash-card-header" style="margin-bottom:16px;">
+              <h6>Notifications</h6>
+              <button class="btn btn-sm btn-outline-primary">Mark All Read</button>
             </div>
-          </div>
-
-          <div class="dash-card">
-            <div class="dash-card-header"><h6>Monthly Spend (USD)</h6><a href="#" class="dash-card-action">Export</a></div>
-            <div class="chart-scroll-wrap">
-              <div class="chart-bar-visual">
-                <div class="bar-group"><div class="bar-fill" style="height:35%;background:var(--clr-accent);"></div><span class="bar-label">Jul</span></div>
-                <div class="bar-group"><div class="bar-fill" style="height:52%;background:var(--clr-accent);"></div><span class="bar-label">Aug</span></div>
-                <div class="bar-group"><div class="bar-fill" style="height:44%;background:var(--clr-accent);"></div><span class="bar-label">Sep</span></div>
-                <div class="bar-group"><div class="bar-fill" style="height:70%;background:var(--clr-accent);"></div><span class="bar-label">Oct</span></div>
-                <div class="bar-group"><div class="bar-fill" style="height:58%;background:var(--clr-accent);"></div><span class="bar-label">Nov</span></div>
-                <div class="bar-group"><div class="bar-fill" style="height:88%;background:var(--clr-primary);"></div><span class="bar-label">Dec</span></div>
-                <div class="bar-group"><div class="bar-fill" style="height:75%;background:var(--clr-teal);"></div><span class="bar-label">Jan</span></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- ACTIVE SHIPMENTS TAB -->
-      <div class="dash-tab" id="tab-shipments" style="display:none;">
-        <div class="dash-card">
-          <div class="dash-card-header">
-            <h6>Active Shipments <span class="badge badge-accent" style="margin-left:8px;">3 in transit</span></h6>
-            <button class="btn btn-primary btn-sm"><i class="fas fa-plus"></i> New Shipment</button>
-          </div>
-          <div class="table-wrapper">
-            <table class="data-table" id="shipments-table">
-              <thead>
-                <tr>
-                  <th data-sort="id">Tracking ID</th>
-                  <th data-sort="origin">Origin</th>
-                  <th data-sort="dest">Destination</th>
-                  <th data-sort="service">Service</th>
-                  <th data-sort="weight">Weight</th>
-                  <th data-sort="status">Status</th>
-                  <th data-sort="eta">ETA</th>
-                  <th>Actions</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><span class="ship-id">SWS-2024-78432</span></td>
-                  <td>New York, NY</td>
-                  <td>Los Angeles, CA</td>
-                  <td><span class="badge badge-teal">Express</span></td>
-                  <td>2.4 kg</td>
-                  <td><span class="badge badge-accent">In Transit</span></td>
-                  <td>Jan 28, 2024</td>
-                  <td>
-                    <a href="tracking.html?t=SWS-2024-78432" class="btn btn-sm btn-outline-primary"><i class="fas fa-search"></i> Track</a>
-                  </td>
-                </tr>
-                <tr>
-                  <td><span class="ship-id">SWS-2024-77943</span></td>
-                  <td>New York, NY</td>
-                  <td>Seattle, WA</td>
-                  <td><span class="badge badge-secondary">Standard</span></td>
-                  <td>0.9 kg</td>
-                  <td><span class="badge badge-warning">Pending</span></td>
-                  <td>Jan 30, 2024</td>
-                  <td>
-                    <a href="tracking.html?t=SWS-2024-77943" class="btn btn-sm btn-outline-primary"><i class="fas fa-search"></i> Track</a>
-                  </td>
-                </tr>
-                <tr>
-                  <td><span class="ship-id">SWS-2024-77801</span></td>
-                  <td>Boston, MA</td>
-                  <td>Austin, TX</td>
-                  <td><span class="badge badge-accent-dark">Same-Day</span></td>
-                  <td>1.2 kg</td>
-                  <td><span class="badge badge-accent">In Transit</span></td>
-                  <td>Jan 28, 2024</td>
-                  <td>
-                    <a href="tracking.html?t=SWS-2024-77801" class="btn btn-sm btn-outline-primary"><i class="fas fa-search"></i> Track</a>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-
-      <!-- HISTORY TAB -->
-      <div class="dash-tab" id="tab-history" style="display:none;">
-        <div class="dash-card">
-          <div class="dash-card-header">
-            <h6>Shipment History <span class="badge badge-secondary" style="margin-left:8px;">128 delivered</span></h6>
-            <button class="btn btn-sm btn-outline-primary"><i class="fas fa-filter"></i> Filter</button>
-          </div>
-          <div class="table-wrapper">
-            <table class="data-table">
-              <thead>
-                <tr><th>Tracking ID</th><th>Destination</th><th>Service</th><th>Weight</th><th>Cost</th><th>Status</th><th>Delivered</th></tr>
-              </thead>
-              <tbody>
-                <tr><td><span class="ship-id">SWS-78291</span></td><td>Chicago, IL</td><td><span class="badge badge-teal">Express</span></td><td>1.8 kg</td><td>$18.50</td><td><span class="badge badge-success">Delivered</span></td><td>Jan 24, 2024</td></tr>
-                <tr><td><span class="ship-id">SWS-78187</span></td><td>Miami, FL</td><td><span class="badge badge-secondary">Standard</span></td><td>3.2 kg</td><td>$12.00</td><td><span class="badge badge-success">Delivered</span></td><td>Jan 20, 2024</td></tr>
-                <tr><td><span class="ship-id">SWS-78012</span></td><td>Denver, CO</td><td><span class="badge badge-teal">Express</span></td><td>0.6 kg</td><td>$9.50</td><td><span class="badge badge-success">Delivered</span></td><td>Jan 16, 2024</td></tr>
-                <tr><td><span class="ship-id">SWS-77880</span></td><td>Phoenix, AZ</td><td><span class="badge badge-secondary">Standard</span></td><td>2.1 kg</td><td>$11.20</td><td><span class="badge badge-success">Delivered</span></td><td>Jan 11, 2024</td></tr>
-                <tr><td><span class="ship-id">SWS-77712</span></td><td>Houston, TX</td><td><span class="badge badge-accent-dark">Same-Day</span></td><td>1.4 kg</td><td>$27.80</td><td><span class="badge badge-danger">Failed</span></td><td>Jan 7, 2024</td></tr>
-                <tr><td><span class="ship-id">SWS-77540</span></td><td>San Francisco, CA</td><td><span class="badge badge-teal">Express</span></td><td>4.0 kg</td><td>$22.40</td><td><span class="badge badge-success">Delivered</span></td><td>Jan 2, 2024</td></tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-
-      <!-- ADDRESSES TAB -->
-      <div class="dash-tab" id="tab-addresses" style="display:none;">
-        <div class="dash-card-header" style="margin-bottom:20px;">
-          <h6>Saved Addresses</h6>
-          <button class="btn btn-primary btn-sm"><i class="fas fa-plus"></i> Add Address</button>
-        </div>
-        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;">
-          <div class="address-card">
-            <div class="address-card-top">
-              <span class="badge badge-accent">Home</span>
-              <button class="btn-icon-ghost"><i class="fas fa-ellipsis-v"></i></button>
-            </div>
-            <p class="address-name"><i class="fas fa-user"></i> James Carter</p>
-            <p class="address-line"><i class="fas fa-map-marker-alt"></i> 142 West 68th Street, Apt 5B<br>New York, NY 10023</p>
-            <p class="address-line"><i class="fas fa-phone"></i> +1 212 555 0034</p>
-            <div class="address-card-actions">
-              <button class="btn btn-sm btn-outline-primary"><i class="fas fa-pencil"></i> Edit</button>
-              <button class="btn btn-sm btn-ghost-danger"><i class="fas fa-trash"></i></button>
-            </div>
-          </div>
-          <div class="address-card">
-            <div class="address-card-top">
-              <span class="badge badge-teal">Office</span>
-              <button class="btn-icon-ghost"><i class="fas fa-ellipsis-v"></i></button>
-            </div>
-            <p class="address-name"><i class="fas fa-building"></i> Carter & Associates</p>
-            <p class="address-line"><i class="fas fa-map-marker-alt"></i> 420 Lexington Ave, Suite 800<br>New York, NY 10170</p>
-            <p class="address-line"><i class="fas fa-phone"></i> +1 212 555 8800</p>
-            <div class="address-card-actions">
-              <button class="btn btn-sm btn-outline-primary"><i class="fas fa-pencil"></i> Edit</button>
-              <button class="btn btn-sm btn-ghost-danger"><i class="fas fa-trash"></i></button>
-            </div>
-          </div>
-          <div class="address-card address-card-add">
-            <button class="btn-add-address">
-              <i class="fas fa-plus-circle"></i>
-              <span>Add New Address</span>
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- PROFILE TAB -->
-      <div class="dash-tab" id="tab-profile" style="display:none;">
-        <div class="dash-profile-grid">
-          <div class="dash-card" style="text-align:center;padding:32px 20px;">
-            <div style="position:relative;display:inline-block;margin-bottom:16px;">
-              <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Profile" style="width:96px;height:96px;border-radius:50%;object-fit:cover;border:3px solid var(--clr-accent);" />
-              <button style="position:absolute;bottom:0;right:0;background:var(--clr-accent);color:#fff;border:none;width:28px;height:28px;border-radius:50%;cursor:pointer;font-size:.75rem;"><i class="fas fa-camera"></i></button>
-            </div>
-            <h5 style="margin-bottom:4px;">James Carter</h5>
-            <p style="font-size:.8rem;color:var(--clr-gray-500);margin-bottom:16px;">Customer · Member since 2021</p>
-            <span class="badge badge-success" style="font-size:.75rem;">Verified Account</span>
-            <div style="margin-top:24px;display:flex;flex-direction:column;gap:8px;text-align:start;font-size:.8125rem;color:var(--clr-gray-600);">
-              <div><i class="fas fa-star" style="color:var(--clr-warning);width:16px;"></i> Rating: <strong>4.9 / 5</strong></div>
-              <div><i class="fas fa-boxes-stacked" style="color:var(--clr-primary);width:16px;"></i> Total Shipments: <strong>142</strong></div>
-              <div><i class="fas fa-wallet" style="color:var(--clr-teal);width:16px;"></i> Wallet Balance: <strong>$220.00</strong></div>
-            </div>
-          </div>
-
-          <div class="dash-card">
-            <div class="dash-card-header" style="margin-bottom:24px;"><h6>Profile Settings</h6></div>
-            <form>
-              <div class="form-row">
-                <div class="form-group">
-                  <label class="form-label">First Name</label>
-                  <input type="text" class="form-control" value="James" />
-                </div>
-                <div class="form-group">
-                  <label class="form-label">Last Name</label>
-                  <input type="text" class="form-control" value="Carter" />
+            <div style="display:flex;flex-direction:column;gap:0;">
+              <div class="notif-row unread">
+                <div class="notif-dot" style="background:var(--clr-accent);"></div>
+                <div class="notif-icon" style="background:rgba(249,115,22,.1);color:var(--clr-accent);"><i
+                    class="fas fa-truck-fast"></i></div>
+                <div class="notif-body">
+                  <strong>SWS-78432 is out for delivery</strong>
+                  <p>Your shipment is with the courier and will arrive today by 6:00 PM.</p>
+                  <span class="notif-time">2 hours ago</span>
                 </div>
               </div>
-              <div class="form-row">
-                <div class="form-group">
-                  <label class="form-label">Email Address</label>
-                  <input type="email" class="form-control" value="james@company.com" />
-                </div>
-                <div class="form-group">
-                  <label class="form-label">Phone Number</label>
-                  <input type="tel" class="form-control" value="+1 212 555 0034" />
-                </div>
-              </div>
-              <div class="form-group">
-                <label class="form-label">Company (optional)</label>
-                <input type="text" class="form-control" value="Carter & Associates" />
-              </div>
-              <hr style="border:none;border-top:1px solid var(--clr-gray-100);margin:20px 0;" />
-              <h6 style="margin-bottom:16px;font-size:.875rem;">Change Password</h6>
-              <div class="form-row">
-                <div class="form-group">
-                  <label class="form-label">Current Password</label>
-                  <input type="password" class="form-control" placeholder="••••••••" />
-                </div>
-                <div class="form-group">
-                  <label class="form-label">New Password</label>
-                  <input type="password" class="form-control" placeholder="••••••••" />
+              <div class="notif-row unread">
+                <div class="notif-dot" style="background:var(--clr-teal);"></div>
+                <div class="notif-icon" style="background:rgba(6,182,212,.1);color:var(--clr-teal);"><i
+                    class="fas fa-warehouse"></i></div>
+                <div class="notif-body">
+                  <strong>SWS-77801 arrived at sorting facility</strong>
+                  <p>Your package arrived at the Austin TX distribution centre.</p>
+                  <span class="notif-time">5 hours ago</span>
                 </div>
               </div>
-              <div style="display:flex;gap:12px;margin-top:8px;">
-                <button type="submit" class="btn btn-primary">Save Changes</button>
-                <button type="button" class="btn btn-outline-primary">Cancel</button>
+              <div class="notif-row unread">
+                <div class="notif-dot" style="background:var(--clr-success);"></div>
+                <div class="notif-icon" style="background:rgba(34,197,94,.1);color:var(--clr-success);"><i
+                    class="fas fa-circle-check"></i></div>
+                <div class="notif-body">
+                  <strong>SWS-78291 was successfully delivered</strong>
+                  <p>Your package was delivered to Chicago, IL on Jan 24.</p>
+                  <span class="notif-time">3 days ago</span>
+                </div>
               </div>
-            </form>
-          </div>
-        </div>
-      </div>
-
-      <!-- NOTIFICATIONS TAB -->
-      <div class="dash-tab" id="tab-notifications" style="display:none;">
-        <div class="dash-card">
-          <div class="dash-card-header" style="margin-bottom:16px;">
-            <h6>Notifications</h6>
-            <button class="btn btn-sm btn-outline-primary">Mark All Read</button>
-          </div>
-          <div style="display:flex;flex-direction:column;gap:0;">
-            <div class="notif-row unread">
-              <div class="notif-dot" style="background:var(--clr-accent);"></div>
-              <div class="notif-icon" style="background:rgba(249,115,22,.1);color:var(--clr-accent);"><i class="fas fa-truck-fast"></i></div>
-              <div class="notif-body">
-                <strong>SWS-78432 is out for delivery</strong>
-                <p>Your shipment is with the courier and will arrive today by 6:00 PM.</p>
-                <span class="notif-time">2 hours ago</span>
+              <div class="notif-row">
+                <div class="notif-icon" style="background:rgba(11,37,69,.08);color:var(--clr-primary);"><i
+                    class="fas fa-tag"></i></div>
+                <div class="notif-body">
+                  <strong>Get 20% off your next international shipment!</strong>
+                  <p>Use code ZENITH20 at checkout. Offer valid until Feb 1.</p>
+                  <span class="notif-time">5 days ago</span>
+                </div>
               </div>
-            </div>
-            <div class="notif-row unread">
-              <div class="notif-dot" style="background:var(--clr-teal);"></div>
-              <div class="notif-icon" style="background:rgba(6,182,212,.1);color:var(--clr-teal);"><i class="fas fa-warehouse"></i></div>
-              <div class="notif-body">
-                <strong>SWS-77801 arrived at sorting facility</strong>
-                <p>Your package arrived at the Austin TX distribution centre.</p>
-                <span class="notif-time">5 hours ago</span>
-              </div>
-            </div>
-            <div class="notif-row unread">
-              <div class="notif-dot" style="background:var(--clr-success);"></div>
-              <div class="notif-icon" style="background:rgba(34,197,94,.1);color:var(--clr-success);"><i class="fas fa-circle-check"></i></div>
-              <div class="notif-body">
-                <strong>SWS-78291 was successfully delivered</strong>
-                <p>Your package was delivered to Chicago, IL on Jan 24.</p>
-                <span class="notif-time">3 days ago</span>
-              </div>
-            </div>
-            <div class="notif-row">
-              <div class="notif-icon" style="background:rgba(11,37,69,.08);color:var(--clr-primary);"><i class="fas fa-tag"></i></div>
-              <div class="notif-body">
-                <strong>Get 20% off your next international shipment!</strong>
-                <p>Use code ZENITH20 at checkout. Offer valid until Feb 1.</p>
-                <span class="notif-time">5 days ago</span>
-              </div>
-            </div>
-            <div class="notif-row">
-              <div class="notif-icon" style="background:rgba(11,37,69,.08);color:var(--clr-primary);"><i class="fas fa-shield-halved"></i></div>
-              <div class="notif-body">
-                <strong>Your account was accessed from a new device</strong>
-                <p>If this wasn't you, please change your password immediately.</p>
-                <span class="notif-time">1 week ago</span>
+              <div class="notif-row">
+                <div class="notif-icon" style="background:rgba(11,37,69,.08);color:var(--clr-primary);"><i
+                    class="fas fa-shield-halved"></i></div>
+                <div class="notif-body">
+                  <strong>Your account was accessed from a new device</strong>
+                  <p>If this wasn't you, please change your password immediately.</p>
+                  <span class="notif-time">1 week ago</span>
+                </div>
               </div>
             </div>
           </div>
         </div>
+
       </div>
+    </main>
+  </div>
 
-    </div>
-  </main>
-</div>
-
-<script src="js/dashboard.js"></script>
+  <script src="js/dashboard.js"></script>
 </body>
+
 </html>

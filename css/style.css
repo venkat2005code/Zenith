@@ -962,8 +962,8 @@ select.form-control {
 }
 
 [data-theme="dark"] .mobile-nav-link {
-  color: var(--clr-gray-200);
-  border-bottom-color: rgba(255, 255, 255, 0.1);
+  color: var(--clr-white);
+  border-bottom-color: rgba(255, 255, 255, 0.08);
 }
 
 [data-theme="dark"] .mobile-nav-link:hover {
@@ -1018,8 +1018,9 @@ select.form-control {
 
 [data-theme="dark"] .nav-mobile .theme-toggle,
 [data-theme="dark"] .nav-mobile .rtl-toggle {
-  background: rgba(255, 255, 255, 0.08);
-  color: var(--clr-gray-100);
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--clr-white);
+  border-color: rgba(255, 255, 255, 0.15);
 }
 
 [data-theme="dark"] .nav-mobile .theme-toggle:hover,

@@ -779,11 +779,18 @@ body.auth-page {
     right: auto;
   }
 
-  .auth-top-actions .theme-toggle,
-  .auth-top-actions .auth-rtl-toggle {
+  .auth-top-actions .theme-toggle {
     width: 38px;
     height: 38px;
-    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+
+  .auth-top-actions .auth-rtl-toggle {
+    width: auto;
+    min-width: 44px;
+    height: 38px;
+    padding: 0 10px;
+    flex-shrink: 0;
   }
 }
 

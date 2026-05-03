@@ -47,13 +47,13 @@ function applyDashTheme(theme) {
         icon.classList.remove('fa-moon');
         icon.classList.add('fa-sun');
       }
-      if (span) span.textContent = 'Light Mode';
+      if (span) span.textContent = 'Dark Mode';
     } else {
       if (icon) {
         icon.classList.remove('fa-sun');
         icon.classList.add('fa-moon');
       }
-      if (span) span.textContent = 'Dark Mode';
+      if (span) span.textContent = 'Light Mode';
     }
   });
 }
@@ -63,7 +63,7 @@ function applyDir(dir) {
   // Update label text — buttons may use .dir-label class or a bare <span>
   document.querySelectorAll('.topbar-rtl, .dash-rtl-btn').forEach(btn => {
     const lbl = btn.querySelector('.dir-label') || btn.querySelector('span');
-    if (lbl) lbl.textContent = dir === 'ltr' ? 'RTL' : 'LTR';
+    if (lbl) lbl.textContent = dir.toUpperCase();
   });
   // NOTE: sidebar left/right positioning is handled entirely by CSS
   // [dir="rtl"] .sidebar { order:2 } and mobile transform; do NOT set inline styles here.

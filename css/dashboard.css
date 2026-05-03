@@ -13,7 +13,8 @@
 /* ── SIDEBAR ────────────────────────────────────────────── */
 .sidebar {
   width: var(--sidebar-w);
-  background: #020617; /* Forced fixed deep navy for premium HUD-style navigation visibility */
+  background: #020617;
+  /* Forced fixed deep navy for premium HUD-style navigation visibility */
   display: flex;
   flex-direction: column;
   position: sticky;
@@ -96,7 +97,8 @@
   font-weight: 700;
   letter-spacing: .12em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, .4); /* Increased opacity for better contrast on fixed dark sidebar */
+  color: rgba(255, 255, 255, .4);
+  /* Increased opacity for better contrast on fixed dark sidebar */
   padding: 14px 8px 6px;
 }
 
@@ -106,7 +108,8 @@
   gap: 12px;
   padding: 11px 12px;
   border-radius: var(--radius-sm);
-  color: rgba(255, 255, 255, .7); /* Increased from .6 for better legibility */
+  color: rgba(255, 255, 255, .7);
+  /* Increased from .6 for better legibility */
   font-size: .9375rem;
   font-weight: 500;
   transition: all var(--trans-fast);
@@ -160,10 +163,48 @@
 }
 
 /* Sidebar bottom */
-.sidebar-bottom {
-  padding: 12px;
+.sidebar-footer {
+  padding: 16px 12px;
   border-top: 1px solid rgba(255, 255, 255, .08);
-  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.sidebar-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 8px;
+}
+
+.sidebar-ctrl-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  color: rgba(255, 255, 255, .7);
+  font-size: .875rem;
+  font-weight: 600;
+  background: rgba(255, 255, 255, .05);
+  cursor: pointer;
+  transition: all var(--trans-fast);
+  border: none;
+  text-align: left;
+}
+
+.sidebar-ctrl-btn:hover {
+  background: rgba(255, 255, 255, .1);
+  color: var(--clr-white);
+}
+
+.sidebar-ctrl-btn i {
+  width: 20px;
+  text-align: center;
+  font-size: 1rem;
 }
 
 .sidebar-user-card {
@@ -207,7 +248,8 @@
 
 .user-role {
   font-size: .75rem;
-  color: rgba(255, 255, 255, .55); /* Increased for better contrast */
+  color: rgba(255, 255, 255, .55);
+  /* Increased for better contrast */
 }
 
 .logout-btn {
@@ -283,6 +325,19 @@
   transition: all var(--trans-base);
 }
 
+.sidebar-toggle i {
+  color: var(--clr-gray-600);
+  font-size: 1.25rem;
+}
+
+[data-theme="dark"] .sidebar-toggle span {
+  background: var(--clr-white) !important;
+}
+
+[data-theme="dark"] .sidebar-toggle i {
+  color: var(--clr-white) !important;
+}
+
 .sidebar-toggle.active span:nth-child(1) {
   transform: translateY(8px) rotate(45deg);
 }
@@ -304,13 +359,15 @@
 
 .topbar-subtitle {
   font-size: .875rem;
-  color: var(--clr-gray-500); /* Darker for better visibility */
+  color: var(--clr-gray-500);
+  /* Darker for better visibility */
 }
 
 .topbar-right {
   display: flex;
   align-items: center;
-  gap: 16px; /* Standardized with main site nav-actions */
+  gap: 16px;
+  /* Standardized with main site nav-actions */
 }
 
 .topbar-search {
@@ -338,7 +395,8 @@
 }
 
 .topbar-search i {
-  color: var(--clr-gray-500); /* Darker for better contrast */
+  color: var(--clr-gray-500);
+  /* Darker for better contrast */
   font-size: .875rem;
 }
 
@@ -371,26 +429,6 @@
   border-radius: 50%;
   background: var(--clr-danger);
   border: 2px solid var(--clr-white);
-}
-
-.topbar-rtl {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 7px 14px;
-  border-radius: var(--radius-pill);
-  border: 1.5px solid var(--clr-border-strong);
-  font-size: .8125rem;
-  font-weight: 600;
-  color: var(--clr-gray-600);
-  cursor: pointer;
-  background: var(--clr-bg-card);
-  transition: all var(--trans-fast);
-}
-
-.topbar-rtl:hover {
-  border-color: var(--clr-accent);
-  color: var(--clr-accent);
 }
 
 .topbar-avatar {
@@ -514,15 +552,18 @@
 .kpi-card:hover {
   transform: translateY(-3px);
   box-shadow: var(--shadow-xl);
-  border-color: var(--clr-border-strong); /* Stronger border for clarity */
+  border-color: var(--clr-border-strong);
+  /* Stronger border for clarity */
 }
 
 .kpi-info .kpi-label {
   font-size: .8rem;
-  font-weight: 700; /* Increased weight */
+  font-weight: 700;
+  /* Increased weight */
   letter-spacing: .06em;
   text-transform: uppercase;
-  color: var(--clr-gray-600); /* Darker for better contrast */
+  color: var(--clr-gray-600);
+  /* Darker for better contrast */
   margin-bottom: 8px;
 }
 
@@ -636,7 +677,8 @@
   align-items: center;
   gap: 12px;
   padding: 12px 0;
-  border-bottom: 1px solid var(--clr-border); /* Theme-aware border */
+  border-bottom: 1px solid var(--clr-border);
+  /* Theme-aware border */
 }
 
 .shipment-row:last-child {
@@ -696,7 +738,8 @@
   justify-content: space-between;
   font-size: .875rem;
   font-weight: 700;
-  color: var(--clr-primary); /* Use high-contrast primary variable for theme-aware visibility */
+  color: var(--clr-primary);
+  /* Use high-contrast primary variable for theme-aware visibility */
   margin-bottom: 6px;
 }
 
@@ -778,7 +821,8 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  background: var(--clr-bg-card); /* Theme-aware background */
+  background: var(--clr-bg-card);
+  /* Theme-aware background */
   border: 1.5px solid var(--clr-border-strong);
   border-radius: var(--radius-md);
   padding: 8px 14px;
@@ -807,7 +851,8 @@
   align-items: center;
   gap: 8px;
   padding: 8px 16px;
-  background: var(--clr-bg-card); /* Theme-aware background */
+  background: var(--clr-bg-card);
+  /* Theme-aware background */
   border: 1.5px solid var(--clr-border-strong);
   border-radius: var(--radius-md);
   font-size: .875rem;
@@ -824,7 +869,8 @@
 
 /* ── USER PROFILE SECTION ────────────────────────────────── */
 .profile-header-card {
-  background: linear-gradient(135deg, #1E293B, #0F172A); /* Fixed dark brand background to protect white text */
+  background: linear-gradient(135deg, #1E293B, #0F172A);
+  /* Fixed dark brand background to protect white text */
   border-radius: var(--radius-xl);
   padding: 32px;
   display: flex;
@@ -902,7 +948,8 @@
 
 /* Saved address card */
 .address-card {
-  background: var(--clr-bg-card); /* Theme-aware background */
+  background: var(--clr-bg-card);
+  /* Theme-aware background */
   border: 1.5px solid var(--clr-border);
   border-radius: var(--radius-lg);
   padding: 20px;
@@ -987,7 +1034,8 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 10px 0; /* More compact */
+  padding: 10px 0;
+  /* More compact */
   border-bottom: 1px solid var(--clr-gray-100);
 }
 
@@ -1101,11 +1149,6 @@
   }
 
   /* 360px refined fixes */
-  @media (max-width: 400px) {
-    .topbar-rtl span {
-      display: none;
-    }
-
     .topbar-right {
       gap: 6px;
     }
@@ -1133,13 +1176,14 @@
       min-width: 180px;
     }
 
-    .driver-stats, 
+    .driver-stats,
     .driver-row .badge,
-    .driver-row > div:last-child {
-      margin-left: 56px; /* 44px (avatar) + 12px (gap) */
+    .driver-row>div:last-child {
+      margin-left: 56px;
+      /* 44px (avatar) + 12px (gap) */
     }
 
-    .driver-row > div:last-child {
+    .driver-row>div:last-child {
       margin-left: 56px !important;
       width: 100%;
       margin-top: 4px;
@@ -1147,7 +1191,7 @@
   }
 
   .kpi-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .dash-content {
@@ -1167,11 +1211,20 @@
     width: 100%;
     justify-content: center;
   }
-}
+
 
 @media (max-width: 480px) {
   .kpi-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
+    gap: 12px;
+  }
+
+  .kpi-card {
+    padding: 16px;
+  }
+
+  .kpi-info .kpi-value {
+    font-size: 1.5rem;
   }
 
   .action-bar {
@@ -1344,7 +1397,8 @@
   font-size: .8125rem;
   font-weight: 700;
   color: var(--clr-primary);
-  background: var(--clr-bg-alt); /* Use theme-aware background for contrast */
+  background: var(--clr-bg-alt);
+  /* Use theme-aware background for contrast */
   padding: 2px 7px;
   border-radius: 4px;
 }
@@ -1661,7 +1715,8 @@
 }
 
 .bar-fill {
-  width: 40%; /* Reduced for better spacing */
+  width: 40%;
+  /* Reduced for better spacing */
   border-radius: 4px 4px 0 0;
   transition: height .7s cubic-bezier(.4, 0, .2, 1);
   min-height: 4px;
@@ -1673,4 +1728,18 @@
   white-space: nowrap;
 }
 
-/* chart-bar-visual already has display:flex; align-items:flex-end in previous block */
+/* ── MOBILE GRID FIXES ─────────────────────────────────── */
+@media (max-width: 480px) {
+  .kpi-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+  
+  .kpi-card {
+    padding: 20px !important;
+  }
+
+  .kpi-info .kpi-value {
+    font-size: 1.75rem !important;
+  }
+}
